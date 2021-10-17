@@ -1,0 +1,8 @@
+##################################################################################################################
+#Put start_script and spectrwm_bar.sh in convenient location. They need to be referenced in spectrwm config file.#
+##################################################################################################################
+bashrc -> ~/.bashrc
+spectrwm.conf -> ~/.spectrwm.conf
+spectrwm_us.conf -> ~/.spectrwm_us.conf
+init.vim -> ~/.config/nvim/init.vim
+starship -> ~/.config/.starship.toml

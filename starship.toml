@@ -1,0 +1,8 @@
+add_newline = false
+
+[line_break]
+disabled = false
+
+[cmd_duration]
+min_time = 20_000  # Show command duration over 10,000 milliseconds (=20 sec)
+format = " took [$duration]($style)"
