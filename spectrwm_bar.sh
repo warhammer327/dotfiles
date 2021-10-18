@@ -16,9 +16,13 @@ cpu() {
 	echo "CPU: $cpu%"
 }
 
+wifi(){
+	echo -e "WiFi:$(nmcli dev status | grep -w 'connected'|awk '{ s = ""; for (i = 4; i <= NF; i++) s = s $i " "; print s }')"
+}
+
 
 SLEEP_SEC=10
 while :; do
-	echo "$(mem) | $(cpu)"
+	echo "$(mem) | $(cpu)| $(wifi)"
 	sleep SLEEP_SEC
 done
