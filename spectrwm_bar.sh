@@ -17,7 +17,7 @@ cpu() {
 }
 
 wifi(){
-	echo -e "WiFi:$(nmcli dev status | grep -w 'connected'|awk '{ s = ""; for (i = 4; i <= NF; i++) s = s $i " "; print s }')"
+	echo -e "WiFi: $(nmcli dev status | grep -w 'connected'|awk '{ s = ""; for (i = 4; i <= NF; i++) s = s $i " "; print s }')"
 }
 
 
