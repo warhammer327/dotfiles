@@ -20,9 +20,14 @@ wifi(){
 	echo -e "WiFi: $(nmcli dev status | grep -w 'connected'|awk '{ s = ""; for (i = 4; i <= NF; i++) s = s $i " "; print s }')"
 }
 
+batt(){
+	echo -e "$(acpi | awk '{print $5}')"
+	sleep 2
+}
+
 
 SLEEP_SEC=10
 while :; do
-	echo "$(mem) | $(cpu)| $(wifi)"
+	echo "$(mem) | $(cpu) | $(wifi) | $(batt)"
 	sleep SLEEP_SEC
 done
