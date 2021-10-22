@@ -21,6 +21,8 @@ set splitright
 set background=dark
 set cursorline
 
+let &t_SI="\e[6 q"
+let &t_EI="\e[2 q"
 
 map <F8> :w <CR> :!g++ % -o %< && printf '\e[1;32m%-Compiled Successfully\e[m' <CR> :vert term ./%< <CR>
 map <F5> :w <CR> :!g++ % -o %< && ./%< <CR>
