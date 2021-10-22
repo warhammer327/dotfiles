@@ -18,11 +18,15 @@ set expandtab
 set ttimeoutlen=50
 set wrap
 set splitright
-set guicursor+=n-v-c:blinkon0
+set background=dark
+set cursorline
+
 
 map <F8> :w <CR> :!g++ % -o %< && printf '\e[1;32m%-Compiled Successfully\e[m' <CR> :vert term ./%< <CR>
 map <F5> :w <CR> :!g++ % -o %< && ./%< <CR>
 map NN :NERDTreeToggle<CR>
+
+
 
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -32,10 +36,39 @@ Plugin 'VundleVim/Vundle.vim'
 " Add plugins here
 Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
+Plugin 'morhetz/gruvbox'
+
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'sainnhe/sonokai'
+Plugin 'bluz71/vim-moonfly-colors'
+Plugin 'glepnir/oceanic-material'
+Plugin 'joshdick/onedark.vim'
+
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+Plugin 'Raimondi/delimitMate'
+Plugin 'vim-syntastic/syntastic'
 
 call vundle#end()
 
+colo gruvbox
+
 filetype plugin indent on
 
+"vim-cpp-enhanced-setting
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_scope_highlight = 1
 
+"Airline Theme
+let g:airline_theme='dark'
+
+"syntastic settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
