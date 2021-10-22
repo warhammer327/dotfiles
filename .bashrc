@@ -88,11 +88,12 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -l'
+alias ll='ls -al'
 alias ff='clear'
 alias update='sudo apt update && sudo apt upgrade'
-alias vi='nvim'
+alias vi='vim'
 alias ..='cd ..'
+alias r='ranger'
 #alias la='ls -A'
 #alias l='ls -CF'
 
@@ -118,3 +119,5 @@ fi
 
 eval "$(starship init bash)"
 
+. "$HOME/.cargo/env"
+source /home/warhammer/tmp/alacritty/extra/completions/alacritty.bash

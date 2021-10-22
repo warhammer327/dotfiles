@@ -1,0 +1,42 @@
+
+  
+set nocompatible
+filetype on  
+
+syntax on
+
+set shiftwidth=4
+set nospell
+set number
+set ruler
+set cindent
+set mouse=a
+set statusline+=%F
+set showcmd
+set tabstop=4
+set expandtab
+set ttimeoutlen=50
+set wrap
+set splitright
+set guicursor+=n-v-c:blinkon0
+
+map <F8> :w <CR> :!g++ % -o %< && printf '\e[1;32m%-Compiled Successfully\e[m' <CR> :vert term ./%< <CR>
+map <F5> :w <CR> :!g++ % -o %< && ./%< <CR>
+map NN :NERDTreeToggle<CR>
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+" Add plugins here
+Plugin 'preservim/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'joshdick/onedark.vim'
+
+call vundle#end()
+
+filetype plugin indent on
+
+colorscheme onedark
+

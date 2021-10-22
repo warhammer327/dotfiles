@@ -5,3 +5,5 @@ xrandr --output eDP-1 --brightness 0.85
 feh --bg-scale ~/Pictures/debian_wallpaper.jpg
 setxkbmap -option caps:escape
 picom &
+#guake might not be installed 
+guake &
