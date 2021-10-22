@@ -32,11 +32,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Add plugins here
 Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
-Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
 
 filetype plugin indent on
 
-colorscheme onedark
+
 
