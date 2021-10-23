@@ -1,5 +1,3 @@
-
-  
 set nocompatible
 filetype on  
 
@@ -40,16 +38,19 @@ Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'morhetz/gruvbox'
 
+""Themes start
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'sainnhe/sonokai'
 Plugin 'bluz71/vim-moonfly-colors'
 Plugin 'glepnir/oceanic-material'
 Plugin 'joshdick/onedark.vim'
+""Themes end
 
 Plugin 'octol/vim-cpp-enhanced-highlight'
-
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'honza/vim-snippets'
+Plugin 'sirver/UltiSnips'
 
 call vundle#end()
 
@@ -74,3 +75,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"Ulti-snips settings
+"" Trigger configuration. You need to change this to something other than
+"<tab> if you use one of the following:
+"" - https://github.com/Valloric/YouCompleteMe
+"" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"

@@ -1,0 +1,29 @@
+snippet if "if condition"
+if(${1:condition}){
+    ${0:/* code */}
+}
+endsnippet
+
+snippet while "while loop"
+while(${$1:condition}){
+    ${0:/* code */};
+}
+endsnippet
+
+snippet for "for loop"
+for(int $1=0; $1<${2:n}; $1++){
+    ${0:/* code */};
+}
+endsnippet
+
+snippet range "$1.begin(), $1.end() (beginend)"
+${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
+endsnippet
+
+snippet map "std::map (map)"
+map<${1:key}, ${2:value}> map$0;
+endsnippet
+
+snippet {vec,vector} "std::vector (v)"
+vector<${1:char}> ${0:name};
+endsnippet
