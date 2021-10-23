@@ -49,8 +49,10 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'honza/vim-snippets'
+"Plugin 'honza/vim-snippets'
 Plugin 'sirver/UltiSnips'
+Plugin 'vim-scripts/AutoComplPop'
+
 
 call vundle#end()
 
@@ -85,3 +87,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+"vim-rainbow settings
+let g:rainbow_active = 1
+
