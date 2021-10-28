@@ -91,3 +91,9 @@ let g:UltiSnipsEditSplit="vertical"
 "vim-rainbow settings
 let g:rainbow_active = 1
 
+"template settings 
+if has("autocmd")
+    augroup templates
+        autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+    augroup END
+endif
