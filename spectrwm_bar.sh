@@ -25,9 +25,14 @@ batt(){
 	sleep 2
 }
 
+temp(){
+   echo -e TMP:`head -n 1 /sys/class/thermal/thermal_zone0/temp | xargs -I{} awk "BEGIN {printf \"%.0f\n\", {}/1000}"`c
+   sleep 2
+}
+
 
 SLEEP_SEC=10
 while :; do
-	echo "$(mem) | $(cpu) | $(wifi) | $(batt)"
+    echo "$(mem) | $(cpu) | $(wifi) | $(temp) | $(batt)"
 	sleep SLEEP_SEC
 done
