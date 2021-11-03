@@ -94,6 +94,7 @@ alias update='sudo apt update && sudo apt upgrade'
 alias vi='vim'
 alias ..='cd ..'
 alias r='ranger'
+alias shutdown='sudo shutdown'
 #alias la='ls -A'
 #alias l='ls -CF'
 
