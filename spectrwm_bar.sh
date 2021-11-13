@@ -16,8 +16,14 @@ cpu() {
 	echo "CPU: $cpu%"
 }
 
+#SHOW WIFI NAME
+#wifi(){
+#	echo -e "WiFi: $(nmcli dev status | grep -w 'connected'|awk '{ s = ""; for (i = 4; i <= NF; i++) s = s $i " "; print s }')"
+#}
+
+#SHOW WIFI STRENGTH
 wifi(){
-	echo -e "WiFi: $(nmcli dev status | grep -w 'connected'|awk '{ s = ""; for (i = 4; i <= NF; i++) s = s $i " "; print s }')"
+    echo -e "WiFi: $(nmcli dev wifi | grep \* | awk {'print $8'})%"
 }
 
 batt(){
@@ -29,6 +35,7 @@ temp(){
    echo -e TMP:`head -n 1 /sys/class/thermal/thermal_zone0/temp | xargs -I{} awk "BEGIN {printf \"%.0f\n\", {}/1000}"`c
    sleep 2
 }
+
 
 
 SLEEP_SEC=10
