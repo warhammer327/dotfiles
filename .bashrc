@@ -95,6 +95,7 @@ alias vi='vim'
 alias ..='cd ..'
 alias r='ranger'
 alias shutdown='sudo shutdown'
+alias slp='echo freeze | sudo tee /sys/power/state'
 #alias la='ls -A'
 #alias l='ls -CF'
 
