@@ -123,3 +123,4 @@ eval "$(starship init bash)"
 
 . "$HOME/.cargo/env"
 source /home/warhammer/tmp/alacritty/extra/completions/alacritty.bash
+xmodmap ~/.xmodaprc

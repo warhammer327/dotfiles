@@ -18,7 +18,7 @@ set wrap
 set splitright
 set background=dark
 set cursorline
-set paste
+"set paste
 
 let &t_SI="\e[6 q"
 let &t_EI="\e[2 q"
@@ -38,7 +38,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'morhetz/gruvbox'
-
 ""Themes start
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'sainnhe/sonokai'
