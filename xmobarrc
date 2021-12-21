@@ -1,4 +1,4 @@
-Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=13:antialias=true:hinting=true"
+Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=14:antialias=true:hinting=true"
        , additionalFonts = ["xft:FontAwesome:pixelsize=13"]
        , borderColor = "black"
        , border = TopB
@@ -15,9 +15,10 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=13:antialias=
        , iconRoot = "/home/warhammer/.xmonad/xpm/" -- default: "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run DynNetwork     [ "--template" , "up:<tx>kB/s down:<rx>kB/s"     
+       , commands = [ Run DynNetwork     [ "--template" , "up:<tx>Kb/s down:<rx>Kb/s"     
 											, "--Low"      , "1000"       -- units: mB/s
                              				, "--High"     , "5000"       -- units: mB/s
+                                            ,"-S", "False"
                                         ] 10  
                     , Run MultiCpu       [ "--template" , "cpu:<total1>%"
                                                  , "--Low"      , "25"         -- units: %
@@ -61,6 +62,6 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=13:antialias=
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }\
-                    \{ %multicpu%|%memory%|%battery%|%coretemp%|%dynnetwork%|<fc=#ee9a00>%date%</fc> "
+       , template = " %StdinReader% |%dynnetwork% }\
+                    \{ %multicpu%|%memory%|%battery%|%coretemp%|<fc=#ee9a00>%date%</fc> "
        }
