@@ -270,9 +270,9 @@ myStartupHook = do
 myBar = "xmobar"
 
 -- Custom PP, configure it as you like. It determines what is being written to the bar.
-myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]" 
+myPP = xmobarPP { ppCurrent = xmobarColor "green" "" . wrap "[" "]" 
                 , ppVisible = xmobarColor "yellow" ""
-                , ppTitle = xmobarColor "orange" "" . shorten 25
+                , ppTitle = xmobarColor "orange" "" . shorten 15
 }
 
 -- Key binding to toggle the gap for the bar.

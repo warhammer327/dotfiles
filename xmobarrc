@@ -15,12 +15,8 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=14:antialias=
        , iconRoot = "/home/warhammer/.xmonad/xpm/" -- default: "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run DynNetwork     [ "--template" , "up:<tx>Kb/s down:<rx>Kb/s"     
-											, "--Low"      , "1000"       -- units: mB/s
-                             				, "--High"     , "5000"       -- units: mB/s
-                                            ,"-S", "False"
-                                        ] 10  
-                    , Run MultiCpu       [ "--template" , "cpu:<total1>%"
+       , commands = [Run Wireless "wlp3s0" ["-t", "Wifi:<essid>[<quality>]"] 10
+                    , Run MultiCpu       [ "--template" , "cpu:<total>%"
                                                  , "--Low"      , "25"         -- units: %
                                                  , "--High"     , "70"         -- units: %
                                                  , "--low"      , "green"
@@ -62,6 +58,6 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=14:antialias=
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% |%dynnetwork% }\
+       , template = " %StdinReader%|%wlp3s0wi%}\
                     \{ %multicpu%|%memory%|%battery%|%coretemp%|<fc=#ee9a00>%date%</fc> "
        }
