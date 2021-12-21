@@ -10,10 +10,15 @@
 import XMonad
 import Data.Monoid
 import System.Exit
-import XMonad.Hooks.ManageDocks
+import Graphics.X11.ExtraTypes.XF86
+--Hook
+import XMonad.Hooks.DynamicLog
+
+--Util
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 import XMonad.Layout.Tabbed
+
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
@@ -70,9 +75,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    -- hotkey
     , ((modm .|. shiftMask, xK_b     ), spawn "brave-browser-stable")
     , ((modm, xK_t     ), spawn "thunar")
     , ((modm, xK_f     ), spawn "ferdi")
+
+	-- volume keys
+    , ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
+    , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
+    , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
+
 
     -- close focused window
     , ((modm, xK_c     ), kill)
@@ -187,7 +199,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (simpleTabbed ||| tiled ||| Mirror tiled ||| Full)
+myLayout =  (simpleTabbed ||| tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -251,16 +263,31 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do 
         spawnOnce "~/.dotfiles/start_script.sh"
+        
+
+------------------------------------------------------------------------
+-- Command to launch the bar.
+myBar = "xmobar"
+
+-- Custom PP, configure it as you like. It determines what is being written to the bar.
+myPP = xmobarPP { ppCurrent = xmobarColor "#429942" "" . wrap "[" "]" 
+, ppVisible = xmobarColor "yellow" ""}
+
+-- Key binding to toggle the gap for the bar.
+toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = do 
-    xmproc <- spawnPipe "xmobar -x 0 /home/warhammer/.config/xmobar/xmobarrc"
-    xmproc <- spawnPipe "xmobar -x 1 /home/warhammer/.config/xmobar/xmobarrc"
-    xmonad $ docks defaults
+--main = do 
+--    xmproc <- spawnPipe "xmobar -x 0 /home/warhammer/.config/xmobar/xmobarrc"
+--    xmproc <- spawnPipe "xmobar -x 1 /home/warhammer/.config/xmobar/xmobarrc"
+--    
+--    xmonad $ docks defaults
+
+main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will

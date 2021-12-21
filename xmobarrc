@@ -15,15 +15,18 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=13:antialias=
        , iconRoot = "/home/warhammer/.xmonad/xpm/" -- default: "."
        , allDesktops = True
        , overrideRedirect = True
-       , commands = [ Run Weather "VGHS" ["-t","DHK: <tempC>C",
-                                          "-L","22","-H","30",
-                                          "--normal","green",
-                                          "--high","red",
-                                          "--low","lightblue"] 36000
-                    , Run Battery [] 10
-                    , Run Network "wlp3s0" [] 10
-                    , Run Cpu ["-L","5","-H","60","--normal","green","--high","red"] 10
-                    , Run Memory         [ "--template" ,"Mem: <usedratio>%"
+       , commands = [ Run DynNetwork     [ "--template" , "up:<tx>kB/s down:<rx>kB/s"     
+											, "--Low"      , "1000"       -- units: mB/s
+                             				, "--High"     , "5000"       -- units: mB/s
+                                        ] 10  
+                    , Run MultiCpu       [ "--template" , "cpu:<total1>%"
+                                                 , "--Low"      , "25"         -- units: %
+                                                 , "--High"     , "70"         -- units: %
+                                                 , "--low"      , "green"
+                                                 , "--normal"   , "darkorange"
+                                                 , "--high"     , "red"
+                                                 ] 10 
+                    , Run Memory         [ "--template" ,"mem:<usedratio>%"
                                                  , "--Low"      , "25"        -- units: %
                                                  , "--High"     , "80"        -- units: %
                                                  , "--low"      , "green"
@@ -31,8 +34,8 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=13:antialias=
                                                  , "--high"     , "red"
                                                  ] 10 
                  
-                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
-                    , Run Battery        [ "--template" , "Batt: <acstatus>"
+                    , Run Date "%a %b %_d %H:%M" "date" 60
+                    , Run Battery        [ "--template" , "batt:<acstatus>"
                                                  , "--Low"      , "20"        -- units: %
                                                  , "--High"     , "80"        -- units: %
                                                  , "--low"      , "red"
@@ -45,18 +48,19 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=13:antialias=
                                                            -- AC "on" status
                                                            , "-O"   , "<fc=#dAA520>Charging</fc>"
                                                            -- charged status
-                                                           , "-i"   , "Charged"
+                                                           , "-i"   , "100%"
                                                  ] 50
-                    , Run CoreTemp       [ "--template" , "Temp: <core1>°C"
-                                                 , "--Low"      , "50"        -- units: °C
+                    , Run CoreTemp       [ "--template" , "temp:<core1>°C"
+                                                 , "--Low"      , "45"        -- units: °C
                                                  , "--High"     , "70"        -- units: °C
                                                  , "--low"      , "green"
                                                  , "--normal"   , "orange"
                                                  , "--high"     , "red"
-                                                 ] 50
+                                                 ] 50                 
+                    , Run StdinReader 
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %cpu% | %memory% | %battery% | %coretemp% | %wlp3s0%}\
-                    \{ <fc=#ee9a00>%date%</fc>| %VGHS% "
+       , template = " %StdinReader% }\
+                    \{ %multicpu%|%memory%|%battery%|%coretemp%|%dynnetwork%|<fc=#ee9a00>%date%</fc> "
        }
