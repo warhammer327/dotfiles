@@ -58,6 +58,6 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=14:antialias=
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader%|%wlp3s0wi%}\
-                    \{ %multicpu%|%memory%|%battery%|%coretemp%|<fc=#ee9a00>%date%</fc> "
+       , template = " %StdinReader%| %wlp3s0wi%}\
+                    \{ %multicpu%|%memory%|%battery%|%coretemp%|<fc=#53FC04>%date%</fc> "
        }

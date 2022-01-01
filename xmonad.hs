@@ -10,10 +10,11 @@
 import XMonad
 import Data.Monoid
 import System.Exit
+import XMonad.Actions.SpawnOn
 import Graphics.X11.ExtraTypes.XF86
 --Hook
 import XMonad.Hooks.DynamicLog
-
+import XMonad.Hooks.EwmhDesktops
 --Util
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
@@ -79,6 +80,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_b     ), spawn "brave-browser-stable")
     , ((modm, xK_t     ), spawn "thunar")
     , ((modm, xK_f     ), spawn "ferdi")
+    
 
 	-- volume keys
     , ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
@@ -199,7 +201,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout =  (simpleTabbed ||| tiled ||| Mirror tiled ||| Full)
+myLayout = (simpleTabbed ||| tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -263,7 +265,15 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do 
         spawnOnce "~/.dotfiles/start_script.sh"
+        spawnOnce "dropbox start"        
+
         
+ 
+------------------------------------------------------------------------
+--Spawn on specific workspace
+
+
+
 
 ------------------------------------------------------------------------
 -- Command to launch the bar.
@@ -284,9 +294,9 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 --main = do 
---    xmproc <- spawnPipe "xmobar -x 0 /home/warhammer/.config/xmobar/xmobarrc"
+--   xmproc <- spawnPipe "xmobar -x 0 /home/warhammer/.config/xmobar/xmobarrc"
 --    xmproc <- spawnPipe "xmobar -x 1 /home/warhammer/.config/xmobar/xmobarrc"
---    
+    
 --    xmonad $ docks defaults
 
 main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
