@@ -2,7 +2,7 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=14:antialias=
        , additionalFonts = ["xft:FontAwesome:pixelsize=13"]
        , borderColor = "black"
        , border = TopB
-       , bgColor = "#282C34"
+       , bgColor = "black"
        , fgColor = "grey"
        , alpha = 255
        , position = Top

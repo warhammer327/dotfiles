@@ -80,6 +80,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_b     ), spawn "brave-browser-stable")
     , ((modm, xK_t     ), spawn "thunar")
     , ((modm, xK_f     ), spawn "ferdi")
+    , ((modm, xK_a     ), spawn "export _JAVA_AWT_WM_NONREPARENTING=1;flatpak run com.google.AndroidStudio")
     
 
 	-- volume keys
@@ -265,7 +266,7 @@ myLogHook = return ()
 -- By default, do nothing.
 myStartupHook = do 
         spawnOnce "~/.dotfiles/start_script.sh"
-        spawnOnce "dropbox start"        
+     
 
         
  

@@ -9,6 +9,7 @@ xrandr --output eDP1 --mode 1366x768 --pos 1920x156 --rotate normal --output HDM
 
 feh --bg-scale ~/Pictures/debian_wallpaper.jpg
 
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 picom &
 #guake might not be installed 

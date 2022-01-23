@@ -123,4 +123,6 @@ eval "$(starship init bash)"
 
 . "$HOME/.cargo/env"
 source /home/warhammer/tmp/alacritty/extra/completions/alacritty.bash
+
 xmodmap ~/.xmodaprc
+export _JAVA_AWT_WM_NONREPARENTING=1
