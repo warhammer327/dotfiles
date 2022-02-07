@@ -48,8 +48,8 @@ Config { font = "xft:JetBrainsMono Nerd Font:weight=bold:pixelsize=14:antialias=
                                                            , "-i"   , "100%"
                                                  ] 50
                     , Run CoreTemp       [ "--template" , "temp:<core1>°C"
-                                                 , "--Low"      , "45"        -- units: °C
-                                                 , "--High"     , "70"        -- units: °C
+                                                 , "--Low"      , "50"        -- units: °C
+                                                 , "--High"     , "65"        -- units: °C
                                                  , "--low"      , "green"
                                                  , "--normal"   , "orange"
                                                  , "--high"     , "red"

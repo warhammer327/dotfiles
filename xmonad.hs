@@ -12,6 +12,7 @@ import Data.Monoid
 import System.Exit
 import XMonad.Actions.SpawnOn
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.Actions.CycleWS
 --Hook
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
@@ -87,7 +88,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
     , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
     , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
-
 
     -- close focused window
     , ((modm, xK_c     ), kill)
