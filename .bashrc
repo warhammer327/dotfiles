@@ -97,7 +97,8 @@ alias r='ranger'
 alias tt='sudo shutdown now'
 alias ss='echo freeze | sudo tee /sys/power/state'
 alias p3='python3'
-alias xampp='sudo /opt/lampp/manager-linux-x64.run'
+
+alias startvirt='source /mnt/projects/site_ml/venv/bin/activate'
 
 #alias la='ls -A'
 #alias l='ls -CF'
