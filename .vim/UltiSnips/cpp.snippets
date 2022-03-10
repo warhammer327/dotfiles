@@ -29,6 +29,12 @@ for(int $1=0; $1<${2:n}; $1++){
 }
 endsnippet
 
+snippet fora "for loop auto"
+for(auto x:$1){
+    ${0:/* code */}
+}
+endsnippet
+
 snippet range "$1.begin(), $1.end() (beginend)"
 ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
 endsnippet
