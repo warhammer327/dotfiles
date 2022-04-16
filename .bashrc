@@ -97,6 +97,7 @@ alias r='ranger'
 alias tt='sudo shutdown now'
 alias ss='echo freeze | sudo tee /sys/power/state'
 alias p3='python3'
+alias pr='cd /mnt/projects/'
 
 alias startvirt='source /mnt/projects/site_ml/venv/bin/activate'
 
@@ -131,3 +132,5 @@ source /home/warhammer/tmp/alacritty/extra/completions/alacritty.bash
 xmodmap ~/.xmodaprc
 
 export _JAVA_AWT_WM_NONREPARENTING=1
+export PATH="$PATH:$HOME/.dotnet/tools/"
+export PATH="$PATH:/usr/local/latex"

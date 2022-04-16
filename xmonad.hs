@@ -27,7 +27,7 @@ import qualified Data.Map        as M
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "alacritty"
+myTerminal      = "kitty"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -79,6 +79,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
     -- hotkey
     , ((modm .|. shiftMask, xK_b     ), spawn "brave-browser-stable")
+    , ((modm .|. shiftMask, xK_t     ), spawn "flatpak run org.telegram.desktop")
+    , ((modm .|. shiftMask, xK_d     ), spawn "flatpak run com.discordapp.Discord")
     , ((modm, xK_t     ), spawn "thunar")
     , ((modm, xK_f     ), spawn "ferdi")
     , ((modm, xK_a     ), spawn "export _JAVA_AWT_WM_NONREPARENTING=1;flatpak run com.google.AndroidStudio")
@@ -123,10 +125,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
 
     -- Shrink the master area
-    , ((modm,               xK_h     ), sendMessage Shrink)
+    , ((modm,               xK_u     ), sendMessage Shrink)
 
     -- Expand the master area
-    , ((modm,               xK_l     ), sendMessage Expand)
+    , ((modm,               xK_i     ), sendMessage Expand)
 
     -- Push window back into tiling
     --, ((modm,               xK_t     ), withFocused $ windows . W.sink)

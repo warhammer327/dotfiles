@@ -19,7 +19,7 @@ endsnippet
 
 snippet while "while loop"
 while(${1:condition}){
-    ${0:/* code */};
+    $0
 }
 endsnippet
 
@@ -32,6 +32,12 @@ endsnippet
 snippet fora "for loop auto"
 for(auto x:$1){
     ${0:/* code */}
+}
+endsnippet
+
+snippet fun "function"
+${1:return_type} ${2:name}(${3:params}){
+    $0                         
 }
 endsnippet
 

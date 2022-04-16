@@ -45,6 +45,3 @@ colors:
     cyan:    '#22FFFF'
     white:   '#FFFFFF'
 
-window:
-    dynamic_padding: true
-    opacity: 0.75

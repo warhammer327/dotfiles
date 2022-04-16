@@ -4,7 +4,6 @@
 #define MEM(arr,k) memset(arr,k,sizeof arr)
 #define input freopen("01input.txt","r",stdin)
 #define output freopen("01output.txt","w",stdout)
-#define go ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
  
 using namespace std;
  
@@ -14,4 +13,6 @@ int X4[] = {1, -1, 0, 0};
 int Y4[] = {0, 0 , 1, -1};
 
 int main(){
+    ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
+
 }
