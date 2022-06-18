@@ -1,6 +1,6 @@
 font:
   normal:
-    family: monospace
+    family: JetBrainsMono Nerd Font Mono Medium
     style: Regular 
 
   bold:
@@ -15,33 +15,5 @@ font:
     family: monospace
     style: Bold Italic
 
-  size: 13
-
-# RobocopAlpha colors
-colors:   
-# Default colors   
-  primary:     
-    background: '#000000'     
-    foreground: '#FFFFFF' 
-
-  normal:
-    black:   '#000000'
-    red:     '#FF2222'
-    green:   '#22BB22'
-    yellow:  '#BBBB22'
-    blue:    '#2279FF'
-    magenta: '#BB22BB'
-    cyan:    '#22BBBB'
-    white:   '#DDDDDD'
- 
-  # Bright colors
-  bright:
-    black:   '#888888'
-    red:     '#FF2222'
-    green:   '#22FF22'
-    yellow:  '#FFFF22'
-    blue:    '#2279FF'
-    magenta: '#FF22FF'
-    cyan:    '#22FFFF'
-    white:   '#FFFFFF'
+  size: 11
 

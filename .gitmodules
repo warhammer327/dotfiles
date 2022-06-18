@@ -1,0 +1,3 @@
+[submodule "omnisharp-vim"]
+	path = omnisharp-vim
+	url = git@github.com:OmniSharp/omnisharp-vim.git

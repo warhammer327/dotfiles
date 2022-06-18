@@ -20,13 +20,15 @@ set background=dark
 set cursorline
 "set paste
 
-let &t_SI="\e[6 q"
+"change cursor
+let &t_SI="\e[6 q" 
 let &t_EI="\e[2 q"
+"chage cursor end
 
 map <F8> :w <CR> :!g++ % -o %<  <CR> :vert term ./%< <CR>
 map <F5> :w <CR> :!g++ % -o %< && ./%< <CR>
-map NN :NERDTreeToggle<CR>
-
+map <C-o> :NERDTreeToggle<CR>
+inoremap <expr> <Tab> pumvisible() ? '<C-n>' : \ getline('.')[col('.')-2] =~# '[[:alnum:].-_#$]' ? '<C-x><C-o>' : '<Tab>'
 
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -38,6 +40,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'morhetz/gruvbox'
+Plugin 'OmniSharp/omnisharp-vim'
 ""Themes start
 Plugin 'arcticicestudio/nord-vim'
 Plugin 'sainnhe/sonokai'
@@ -45,7 +48,6 @@ Plugin 'bluz71/vim-moonfly-colors'
 Plugin 'glepnir/oceanic-material'
 Plugin 'joshdick/onedark.vim'
 ""Themes end
-
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-syntastic/syntastic'
