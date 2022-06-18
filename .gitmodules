@@ -1,3 +1,6 @@
 [submodule "omnisharp-vim"]
 	path = omnisharp-vim
 	url = git@github.com:OmniSharp/omnisharp-vim.git
+[submodule "ale"]
+	path = ale
+	url = git@github.com:dense-analysis/ale.git
