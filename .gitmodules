@@ -4,3 +4,6 @@
 [submodule "ale"]
 	path = ale
 	url = git@github.com:dense-analysis/ale.git
+[submodule "MatchTagAlways"]
+	path = MatchTagAlways
+	url = https://github.com/Valloric/MatchTagAlways.git

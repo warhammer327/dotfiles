@@ -3,7 +3,7 @@ filetype on
 
 syntax on
 
-set shiftwidth=4
+set number
 set nospell
 set number
 set ruler
@@ -19,16 +19,45 @@ set splitright
 set background=dark
 set cursorline
 "set paste
+set completeopt=menuone,noinsert,noselect,popuphidden
+set completepopup=border:on
+set backspace=indent,eol,start
+set expandtab
+set shiftround
+set shiftwidth=4
+set softtabstop=-1
+set textwidth=80
+set title
+set hidden
+set nofixendofline
+set nostartofline
+set splitbelow
+
+
+set hlsearch
+set incsearch
+set laststatus=2
+set noshowmode
+set signcolumn=yes
+
+set mouse=a
+set updatetime=1000
+
+if has("autocmd")
+    augroup templates
+        autocmd BufNewFile *.cpp 0r ~/.vim/templates/skeleton.cpp
+    augroup END
+endif
 
 "change cursor
 let &t_SI="\e[6 q" 
 let &t_EI="\e[2 q"
 "chage cursor end
 
-map <F8> :w <CR> :!g++ % -o %<  <CR> :vert term ./%< <CR>
+map <F8> :w <CR> :!g++ -std=c++17 % -o  %<  <CR> :vert term ./%< <CR>
 map <F5> :w <CR> :!g++ % -o %< && ./%< <CR>
 map <C-o> :NERDTreeToggle<CR>
-inoremap <expr> <Tab> pumvisible() ? '<C-n>' : \ getline('.')[col('.')-2] =~# '[[:alnum:].-_#$]' ? '<C-x><C-o>' : '<Tab>'
+
 
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -58,7 +87,9 @@ Plugin 'glepnir/oceanic-material'
 Plugin 'joshdick/onedark.vim'
 ""Themes end
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'Raimondi/delimitMate'
+Plugin 'valloric/MatchTagAlways'
+
+Plugin 'jiangmiao/auto-pairs'
 "Plugin 'vim-syntastic/syntastic'
 "Plugin 'honza/vim-snippets'
 Plugin 'sirver/UltiSnips'
@@ -79,34 +110,6 @@ set encoding=utf-8
 scriptencoding utf-8
 
 
-set completeopt=menuone,noinsert,noselect,popuphidden
-set completepopup=highlight:Pmenu,border:off
-
-set backspace=indent,eol,start
-set expandtab
-set shiftround
-set shiftwidth=4
-set softtabstop=-1
-set tabstop=8
-set textwidth=80
-set title
-
-set hidden
-set nofixendofline
-set nostartofline
-set splitbelow
-set splitright
-
-set hlsearch
-set incsearch
-set laststatus=2
-set nonumber
-set noruler
-set noshowmode
-set signcolumn=yes
-
-set mouse=a
-set updatetime=1000
 " }}}
 
 " Colors: {{{
@@ -200,7 +203,7 @@ let g:lightline#ale#indicator_ok = "\uf00c "
 " }}}
 
 " OmniSharp: {{{
-let g:OmniSharp_popup_position = 'peek'
+let g:OmniSharp_popup_position = 'center'
 if has('nvim')
   let g:OmniSharp_popup_options = {
   \ 'winblend': 30,
@@ -210,10 +213,10 @@ if has('nvim')
 else
   let g:OmniSharp_popup_options = {
   \ 'highlight': 'Normal',
-  \ 'padding': [0],
+  \ 'padding': [1],
   \ 'border': [1],
   \ 'borderchars': ['─', '│', '─', '│', '╭', '╮', '╯', '╰'],
-  \ 'borderhighlight': ['ModeMsg']
+  \ 'borderhighlight': ['Special']
   \}
 endif
 let g:OmniSharp_popup_mappings = {

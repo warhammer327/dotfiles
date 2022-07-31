@@ -10,7 +10,7 @@ format = " took [$duration]($style)"
 
 [directory]
 truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style)"
+format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
 format = " [$symbol$branch]($style) "
@@ -34,7 +34,7 @@ stashed = "📦 "
 modified = "📝x${count} "
 staged = "🗃️x${count} "
 renamed = "📛x${count} "
-deleted = "🗑️x${count} "
+deleted = "🗑️ x${count} "
 style = "bright-white"
 format = "$all_status$ahead_behind"
 
