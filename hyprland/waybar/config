@@ -4,7 +4,7 @@
 	// "position": "bottom", // Waybar position (top|bottom|left|right)
 	"height": 30, // Waybar height (to be removed for auto height)
 		      // "width": 1280, // Waybar width
-		"spacing": 4, // Gaps between modules (4px)
+		"spacing": 8, // Gaps between modules (4px)
 			      // Choose the order of the modules
 		"modules-left": [
 			"hyprland/workspaces",
@@ -22,15 +22,15 @@
 		"power-profiles-daemon",
 		"cpu",
 		"memory",
-		//       "temperature",
+		//"temperature",
 		"backlight",
-		//       "keyboard-state",
-		//       "sway/language",
+		//"keyboard-state",
+		//"sway/language",
 		"battery",
 		"battery#bat2",
 		"clock",
 		"tray"
-			//      "custom/power"
+			//"custom/power"
 		],
 		"hyprland/workspaces": {
 			"disable-scroll": true,
@@ -38,7 +38,7 @@
 			"warp-on-scroll": false,
 			"format": "{icon} ",
 			"format-icons": {
-				//"1": "x",
+				//"": "",
 				"urgent": "",
 				"active": "",
 				"default": ""

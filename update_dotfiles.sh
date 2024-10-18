@@ -14,6 +14,8 @@ cp ~/.config/hypr/* ~/dotfiles/hyprland/hyperland/
 # Copy Waybar configuration files
 cp ~/.config/waybar/* ~/dotfiles/hyprland/waybar/
 
+cp ~/.config/wofi/* ~/dotfiles/hyprland/wofi/
+
 git add .
 
 git commit -m "$message"
