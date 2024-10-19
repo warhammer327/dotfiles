@@ -9,7 +9,7 @@ vim.cmd([[
     set wildmode=longest,list   " get bash-like tab completions
     syntax on                   " syntax highlighting
     set mouse=a                 " enable mouse click
-    set clipboard=unnamedplus   " using system clipboard
+"    set clipboard=unnamedplus   " using system clipboard
     set cursorline              " highlight current cursorline
     set ttyfast                 " Speed up scrolling in Vim
 ]])
