@@ -16,6 +16,8 @@ cp ~/.config/waybar/* ~/dotfiles/hyprland/waybar/
 
 cp ~/.config/wofi/* ~/dotfiles/hyprland/wofi/
 
+cp ~/.config/nvim/* ~/dotfiles/nvim/
+
 git add .
 
 git commit -m "$message"
