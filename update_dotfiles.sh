@@ -9,12 +9,12 @@ fi
 message="$1"
 
 # Copy Hyprland configuration files
-cp ~/.config/hypr/* ~/dotfiles/hyprland/hyperland/
+cp -r ~/.config/hypr/* ~/dotfiles/hyprland/hyperland/
 
 # Copy Waybar configuration files
-cp ~/.config/waybar/* ~/dotfiles/hyprland/waybar/
+cp -r ~/.config/waybar/* ~/dotfiles/hyprland/waybar/
 
-cp ~/.config/wofi/* ~/dotfiles/hyprland/wofi/
+cp -r ~/.config/wofi/* ~/dotfiles/hyprland/wofi/
 
 cp -r ~/.config/nvim/* ~/dotfiles/nvim/
 
