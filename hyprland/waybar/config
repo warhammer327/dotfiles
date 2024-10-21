@@ -16,7 +16,8 @@
 		],
 		"modules-right": [
 			"mpd",
-		"idle_inhibitor",
+		"clock",
+		//"idle_inhibitor",
 		"pulseaudio",
 		"network",
 		"power-profiles-daemon",
@@ -28,7 +29,6 @@
 		//"sway/language",
 		"battery",
 		"battery#bat2",
-		"clock",
 		"tray"
 			//"custom/power"
 		],
@@ -38,7 +38,7 @@
 			"warp-on-scroll": false,
 			"format": "{icon} ",
 			"format-icons": {
-				"1": "I ",
+				"1": " I",
 				"2": "II ",
 				"3": "III ",
 				"4": "IV ",
