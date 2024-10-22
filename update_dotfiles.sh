@@ -18,7 +18,7 @@ cp -r ~/.config/wofi/* ~/dotfiles/hyprland/wofi/
 
 cp -r ~/.config/nvim/* ~/dotfiles/nvim/
 
-cp -r ~/.config/sway/* ~/dotfiles/swaync/
+cp -r ~/.config/swaync/* ~/dotfiles/swaync/
 
 git add .
 
