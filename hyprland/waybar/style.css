@@ -67,10 +67,10 @@ background-color: #FFFFFF;
 
     /*
     #workspaces button.active {
-        background-color: #64727D;
-        box-shadow: inset 0 -3px #ffffff;
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
     }
-    */
+     */
 
 
     #workspaces button.urgent {
@@ -330,4 +330,8 @@ background-color: #FFFFFF;
 
     #privacy-item.audio-out {
         background-color: #0069d4;
+    }
+
+    #custom-notification {
+        font-family: "NotoSansMono Nerd Font";
     }

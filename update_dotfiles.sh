@@ -18,6 +18,8 @@ cp -r ~/.config/wofi/* ~/dotfiles/hyprland/wofi/
 
 cp -r ~/.config/nvim/* ~/dotfiles/nvim/
 
+cp -r ~/.config/sway/* ~/dotfiles/swaync/
+
 git add .
 
 git commit -m "$message"
