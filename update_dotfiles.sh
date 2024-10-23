@@ -20,6 +20,8 @@ cp -r ~/.config/nvim/* ~/dotfiles/nvim/
 
 cp -r ~/.config/swaync/* ~/dotfiles/hyprland/swaync/
 
+cp -r ~/.config/starship.toml ~/dotfiles/startship/
+
 git add .
 
 git commit -m "$message"
