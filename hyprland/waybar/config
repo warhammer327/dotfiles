@@ -191,8 +191,7 @@
         },
         "network": {
             // "interface": "wlp2*", // (Optional) To force the use of this interface
-            "interval": 2,
-            //"format-ethernet": " {bandwidthDownOctets}  {bandwidthUpOctets}",
+            "interval": 5,
             "format-ethernet": "{bandwidthDownBytes:>} {bandwidthUpBytes:>}",
             "format-wifi": "{essid} ({signalStrength}%)  ",
             //"format-ethernet": "{ipaddr}/{cidr} 󰖈 ",
