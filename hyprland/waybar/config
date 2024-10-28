@@ -12,7 +12,6 @@
         "hyprland/scratchpad",
         ],
         "modules-center": [
-            "hyprland/window"
         ],
         "modules-right": [
             //"mpd",
@@ -57,14 +56,10 @@
 
             }
         },
-        "hyprland/window": {
-            "format": "{class}",
-            "rewrite": {
-                "(.*) - Thorioum-browser": "🌎 $1",
-                "(.*) - bash": "> [$1]"
-            },
-            "min-length": 23,
-        },
+        //"hyprland/window": {
+        //    "format": "{}",
+        //    "min-length": 100,
+        //},
         "keyboard-state": {
             "numlock": true,
             "capslock": true,
