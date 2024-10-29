@@ -82,9 +82,10 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
+    padding: 0 10px;
     background-color: transparent; 
     color: #ffffff;
+    font-weight: bold;
 }
 
 #workspaces button:hover {
@@ -96,9 +97,8 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;*/
     background-color: transparent;
     box-shadow: inset 0 0px #ffffff; 
-    color: #04A777;
-    font-size: 30px;
-    font-weight: bold;
+    color: #16E0BD;
+    font-size: 24px;
 }
 
 #workspaces button.urgent {
