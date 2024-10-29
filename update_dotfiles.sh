@@ -22,6 +22,8 @@ cp -r ~/.config/swaync/* ~/dotfiles/hyprland/swaync/
 
 cp -r ~/.config/starship.toml ~/dotfiles/startship/
 
+cp -r ~/.config/zathura/* ~/dotfiles/zathura/
+
 git add .
 
 git commit -m "$message"
