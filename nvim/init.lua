@@ -13,4 +13,7 @@ vim.cmd([[
     set cursorline              " highlight current cursorline
     set ttyfast                 " Speed up scrolling in Vim
     "set clipboard=unnamedplus   " using system clipboard
+
+    "autocmd VimEnter * Neotree
+    nnoremap <silent> <C-n> :Neotree toggle<CR>
 ]])
