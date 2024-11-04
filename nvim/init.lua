@@ -1,4 +1,7 @@
 require("config.lazy")
+---"install mason then do LspInstall language
+require("mason").setup()
+require("mason-lspconfig").setup()
 vim.cmd([[
     syntax on                   " syntax highlighting
     set nocompatible            " disable compatibility to old-time vi
@@ -12,8 +15,4 @@ vim.cmd([[
     set mouse=a                 " enable mouse click
     set cursorline              " highlight current cursorline
     set ttyfast                 " Speed up scrolling in Vim
-    "set clipboard=unnamedplus   " using system clipboard
-
-    "autocmd VimEnter * Neotree
-    nnoremap <silent> <C-n> :Neotree toggle<CR>
 ]])

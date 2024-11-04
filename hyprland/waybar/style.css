@@ -223,7 +223,7 @@ label:focus {
 }
 
 #network {
-    background-color: #D95B17;
+    background-color: #775253;
 }
 
 #network.disconnected {
@@ -264,7 +264,7 @@ label:focus {
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: #156064;
 }
 
 #temperature.critical {
