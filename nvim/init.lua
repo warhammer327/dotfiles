@@ -15,11 +15,14 @@ vim.cmd([[
     set mouse=a                 " enable mouse click
     set cursorline              " highlight current cursorline
     set ttyfast                 " Speed up scrolling in Vim
+
+    inoremap <expr> <TAB> pumvisible() ? "<C-y>" : "<TAB>"
 ]])
 
 local colors = {
 	red = "#ca1243",
-	grey = "#a0a1a7",
+	---grey = "#a0a1a7",
+	grey = "#383a42",
 	black = "#383a42",
 	white = "#f3f3f3",
 	light_green = "#83a598",
