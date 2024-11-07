@@ -16,6 +16,8 @@ vim.cmd([[
     set cursorline              " highlight current cursorline
     set ttyfast                 " Speed up scrolling in Vim
 
+    inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+    inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
     inoremap <expr> <TAB> pumvisible() ? "<C-y>" : "<TAB>"
 ]])
 

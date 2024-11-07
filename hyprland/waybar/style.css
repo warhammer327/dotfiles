@@ -135,7 +135,7 @@ button:hover {
 #window,
 #workspaces {
     margin: 0 4px; 
-    background-color: #3B413C;
+    background-color: #282A36;
     border-radius: 10px
 }
 
@@ -155,7 +155,7 @@ button:hover {
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: #F1FA8C;
     color: #000000;
 }
 
@@ -231,7 +231,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    background-color: #FFB86C;
     color: #000000;
 }
 
@@ -366,4 +366,5 @@ label:focus {
 #custom-notification {
     font-family: "NotoSansMono Nerd Font";
 }
+
 
