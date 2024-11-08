@@ -64,7 +64,7 @@ window#waybar.chromium {
 */
 button {
     /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
+    /*box-shadow: inset 0 -3px transparent;*/
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
@@ -73,7 +73,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    /*box-shadow: inset 0 -3px #ffffff;*/
 }
 
 /* you can set a style on hover for any module like this */
@@ -97,7 +97,7 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;*/
     background-color: transparent;
     box-shadow: inset 0 0px #ffffff; 
-    color: #16E0BD;
+    color: #50FA7B;
     font-size: 24px;
 }
 
@@ -134,9 +134,9 @@ button:hover {
 
 #window,
 #workspaces {
-    margin: 0 4px; 
-    background-color: #282A36;
-    border-radius: 10px
+    /*margin: 0 0px; */
+    background-color: #57467B;
+    border-radius: 10px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -155,8 +155,10 @@ button:hover {
 }
 
 #battery {
-    background-color: #F1FA8C;
-    color: #000000;
+    /*background-color: #ffffff;*/
+    background-color: #57467B;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 #battery.charging, #battery.plugged {
@@ -187,18 +189,24 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-    background-color: #f53c3c;
+    /*background-color: #f53c3c;*/
+    background-color: #57467B;
+    font-weight: 700;
     color: #ffffff;
 }
 
 #power-profiles-daemon.balanced {
-    background-color: #2980b9;
+    /*background-color: #2980b9;*/
+    background-color: #57467B;
+    font-weight: 700;
     color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
+    /*background-color: #2ecc71;*/
+    background-color: #57467B;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 label:focus {
@@ -206,12 +214,16 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
-    color: #000000;
+    /*background-color: #2ecc71;*/
+    background-color: #57467B;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 #memory {
-    background-color: #9b59b6;
+    /*background-color: #9b59b6;*/
+    background-color: #57467B;
+    font-weight: 700;
 }
 
 #disk {
@@ -223,7 +235,9 @@ label:focus {
 }
 
 #network {
-    background-color: #775253;
+    /*background-color: #775253;*/
+    background-color: #57467B;
+    font-weight: 700;
 }
 
 #network.disconnected {
@@ -231,8 +245,10 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #FFB86C;
-    color: #000000;
+    /*background-color: #f1c40f;*/
+    background-color: #57467B;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 #pulseaudio.muted {
@@ -264,7 +280,9 @@ label:focus {
 }
 
 #temperature {
-    background-color: #156064;
+    /*background-color: #156064;*/
+    background-color: #57467B;
+    font-weight: 700;
 }
 
 #temperature.critical {
@@ -272,7 +290,8 @@ label:focus {
 }
 
 #tray {
-    background-color: #2980b9;
+    /*background-color: #2980b9;*/
+    background-color: #57467B;
 }
 
 #tray > .passive {
@@ -366,5 +385,4 @@ label:focus {
 #custom-notification {
     font-family: "NotoSansMono Nerd Font";
 }
-
 
