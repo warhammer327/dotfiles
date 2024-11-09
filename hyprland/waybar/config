@@ -121,8 +121,9 @@
             "interval": 1,
             //"timezone": "",
             "tooltip-format": "<tt><small>{calendar}</small></tt>",
-            "format": " {:%H:%M:%S, %b %d}",
+            "format": " {:%H:%M, %a %b %d}",
             //"format-alt": " {:%A, %B %d, %Y}",
+            "format-alt": " {:%H:%M:%S, %a %b %d}",
             "calendar": {
                 "mode"          : "month",
                 "mode-mon-col"  : 3,
