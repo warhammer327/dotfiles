@@ -1,10 +1,10 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](color_orange)\
+[](color_purple)\
 $os\
 $username\
-[](bg:color_yellow fg:color_orange)\
+[](bg:color_yellow fg:color_purple)\
 $directory\
 [](fg:color_yellow bg:color_aqua)\
 $git_branch\
@@ -23,28 +23,45 @@ $ruby\
 [](fg:color_blue bg:color_bg3)\
 $docker_context\
 $conda\
-[](fg:color_bg3 bg:color_bg1)\
+[](fg:color_bg3 bg:color_purple)\
 $time\
-[ ](fg:color_bg1)\
+[ ](fg:color_purple)\
 $line_break$character"""
 
-palette = 'gruvbox_dark'
+# Use the color palette
+palette = "dracula"
 
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
+# Define Dracula color palette
+[palettes.dracula]
+color_fg0 = "#282a36"
+color_bg1 = "#44475a"
+color_bg3 = "#f8f8f2"
+color_blue = "#6272a4"
+color_aqua = "#8be9fd"
+color_green = "#50fa7b"
+color_orange = "#ffb86c"
+color_pink = "#ff79c6"
+color_purple = "#bd93f9"
+color_red = "#ff5555"
+color_yellow= "#f1fa8c"
+
+#palette = 'gruvbox_dark'
+#
+#[palettes.gruvbox_dark]
+#color_fg0 = '#fbf1c7'
+#color_bg1 = '#3c3836'
+#color_bg3 = '#665c54'
+#color_blue = '#458588'
+#color_aqua = '#689d6a'
+#color_green = '#98971a'
+#color_orange = '#d65d0e'
+#color_purple = '#b16286'
+#color_red = '#cc241d'
+#color_yellow = '#d79921'
 
 [os]
 disabled = false
-style = "bg:color_orange fg:color_fg0"
+style = "bg:color_purple fg:color_fg0"
 
 [os.symbols]
 Windows = "󰍲"
@@ -70,8 +87,8 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_fg0"
+style_user = "bg:color_purple fg:color_fg0"
+style_root = "bg:color_purple fg:color_fg0"
 format = '[ $user ]($style)'
 
 [directory]
@@ -158,8 +175,8 @@ format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+style = "bg:color_purple"
+format = '[[  $time ](fg:color_fg0 bg:color_purple)]($style)'
 
 [line_break]
 disabled = false
