@@ -266,9 +266,12 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#custom-media {
-    background-color: #66cc99;
-    color: #2a5c45;
+#custom-cmus {
+    background-color: #57467B;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-weight: 700;
+    color: #ffffff;
     min-width: 100px;
 }
 

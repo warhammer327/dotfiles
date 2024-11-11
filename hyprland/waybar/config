@@ -12,6 +12,7 @@
             //"hyprland/scratchpad",
         ],
         "modules-center": [
+        "custom/cmus",
             "clock",
         ],
         "modules-right": [
@@ -250,7 +251,7 @@
             "menu": "on-click",
             "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
             "menu-actions": {
-                "shutdown": "dnf upgrade -y & shutdown now",
+                "shutdown": "shutdown now",
                 "reboot": "reboot",
                 "suspend": "systemctl suspend",
                 "hibernate": "systemctl hibernate"
@@ -275,5 +276,15 @@
             "on-click": "swaync-client -t -sw",
             "on-click-right": "swaync-client -d -sw",
             "escape": true
+        },
+        "custom/cmus": {
+            "format": "♪ {}",
+            "max-length": 20,
+            "interval": 10,
+            "exec": "cmus-remote -C \"format_print '%t'\"",
+            //"exec": "cmus-remote -C \"format_print '%a - %t'\"",
+            "exec-if": "pgrep cmus",
+            "on-click": "cmus-remote -u",                        //toggle pause
+            "escape": true                                       //handle markup entities
         },
 }
