@@ -1,12 +1,11 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](color_purple)\
-$os\
+[](color_blue)\
 $username\
-[](bg:color_yellow fg:color_purple)\
+[](bg:color_purple fg:color_blue)\
 $directory\
-[](fg:color_yellow bg:color_aqua)\
+[](fg:color_purple bg:color_aqua)\
 $git_branch\
 $git_status\
 [](fg:color_aqua bg:color_blue)\
@@ -23,9 +22,9 @@ $ruby\
 [](fg:color_blue bg:color_bg3)\
 $docker_context\
 $conda\
-[](fg:color_bg3 bg:color_purple)\
+[](fg:color_bg3 bg:color_blue)\
 $time\
-[ ](fg:color_purple)\
+[ ](fg:color_blue)\
 $line_break$character"""
 
 # Use the color palette
@@ -87,12 +86,12 @@ RedHatEnterprise = "󱄛"
 
 [username]
 show_always = true
-style_user = "bg:color_purple fg:color_fg0"
-style_root = "bg:color_purple fg:color_fg0"
-format = '[ $user ]($style)'
+style_user = "bg:color_blue fg:color_bg3"
+style_root = "bg:color_blue fg:color_fg0"
+format = '[$user ]($style)'
 
 [directory]
-style = "fg:color_fg0 bg:color_yellow"
+style = "fg:color_fg0 bg:color_purple"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -176,7 +175,8 @@ format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:color_purple"
-format = '[[  $time ](fg:color_fg0 bg:color_purple)]($style)'
+format = '[[ $time](fg:color_bg3 bg:color_blue)]($style)'
+#format = '[[  $time ](fg:color_fg0 bg:color_blue)]($style)'
 
 [line_break]
 disabled = false

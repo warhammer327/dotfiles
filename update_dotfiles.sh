@@ -24,6 +24,8 @@ cp -r ~/.config/starship.toml ~/dotfiles/startship/
 
 cp -r ~/.config/zathura/* ~/dotfiles/zathura/
 
+cp -r /etc/keyd/* ~/dotfiles/keyd/
+
 git add .
 
 git commit -m "$message"
