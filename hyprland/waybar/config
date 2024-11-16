@@ -12,15 +12,14 @@
             //"hyprland/scratchpad",
         ],
         "modules-center": [
-        "custom/cmus",
-            "clock",
+            "custom/cmus",
+        "clock",
         ],
         "modules-right": [
-            //"mpd",
-            //"clock",
             //"idle_inhibitor",
             "pulseaudio",
         "network",
+        "bluetooth",
         "power-profiles-daemon",
         "cpu",
         "memory",
@@ -233,18 +232,6 @@
             },
             "on-click": "pavucontrol"
         },
-        "custom/media": {
-            "format": "{icon} {text}",
-            "return-type": "json",
-            "max-length": 40,
-            "format-icons": {
-                "spotify": "",
-                "default": "🎜"
-            },
-            "escape": true,
-            "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-                                                                       // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-        },
         "custom/power": {
             "format" : "⏻ ",
             "tooltip": false,
@@ -287,6 +274,18 @@
             "exec-if": "pgrep cmus",
             "on-click": "cmus-remote -u",                        //toggle pause
             "escape": true,                                       //handle markup entities,
-            "marquee": true
+        },
+        "bluetooth": {
+            "format": "{icon}",
+            "format-connected": "󰂰 {device_alias}",
+            "format-connected-battery": "󰂰 {device_battery_percentage}%",
+            "max-length": 10,
+            "tooltip-format": "{device_alias}",
+            "on-click": "blueman-manager",
+            "on-click-right": "rfkill toggle bluetooth",
+            "format-icons": {
+                "enabled": "󰂰",
+                "disabled": "󰂲"
+            }
         },
 }

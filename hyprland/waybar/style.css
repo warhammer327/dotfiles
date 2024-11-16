@@ -13,7 +13,7 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.0);
+    background-color: rgba(43, 48, 59, 0.1);
     /* 
     border-bottom: 3px solid rgba(100, 114, 125, 0.5);
      */
@@ -137,6 +137,7 @@ button:hover {
     /*margin: 0 0px; */
     background-color: #57467B;
     border-radius: 10px;
+    opacity: 0.8;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -152,6 +153,7 @@ button:hover {
 #clock {
     background-color: #57467B;
     font-weight: 700;
+    opacity: 0.8;
 }
 
 #battery {
@@ -159,6 +161,7 @@ button:hover {
     background-color: #57467B;
     font-weight: 700;
     color: #ffffff;
+    opacity: 0.8;
 }
 
 #battery.charging, #battery.plugged {
@@ -187,6 +190,7 @@ button:hover {
 
 #power-profiles-daemon {
     padding-right: 15px;
+    opacity: 0.8;
 }
 
 #power-profiles-daemon.performance {
@@ -219,12 +223,14 @@ label:focus {
     background-color: #57467B;
     font-weight: 700;
     color: #ffffff;
+    opacity: 0.8;
 }
 
 #memory {
     /*background-color: #9b59b6;*/
     background-color: #57467B;
     font-weight: 700;
+    opacity: 0.8;
 }
 
 #disk {
@@ -239,6 +245,7 @@ label:focus {
     /*background-color: #775253;*/
     background-color: #57467B;
     font-weight: 700;
+    opacity: 0.8;
 }
 
 #network.disconnected {
@@ -250,6 +257,7 @@ label:focus {
     background-color: #57467B;
     font-weight: 700;
     color: #ffffff;
+    opacity: 0.8;
 }
 
 #pulseaudio.muted {
@@ -272,7 +280,17 @@ label:focus {
     padding: 0 10px;
     font-weight: 700;
     color: #ffffff;
+    opacity: 0.8;
     min-width: 100px;
+}
+
+#bluetooth {
+    background-color: #57467B;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-weight: 700;
+    color: #ffffff;
+    opacity: 0.8;
 }
 
 #custom-media.custom-spotify {
@@ -389,4 +407,5 @@ label:focus {
 #custom-notification {
     font-family: "NotoSansMono Nerd Font";
 }
+
 
