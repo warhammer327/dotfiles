@@ -27,7 +27,7 @@ window#waybar.empty {
 }
 
 window#waybar.hidden {
-    opacity: 0.7;
+    /*opacity: 0.7;*/
 }
 
 
@@ -151,11 +151,23 @@ button:hover {
     margin-right: 0;
 }
 #clock {
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
+    background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
     font-weight: 700;
     border: 2px solid #8A6FD3;
     border-radius: 10px;
 }
+
+#custom-cmus {
+    /*background-color: #57467B;*/
+    background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
+    font-weight: 700;
+    border: 2px solid #8A6FD3;
+    border-radius: 10px;
+    padding: 0 10px;
+    color: #ffffff;
+    min-width: 100px;
+}
+
 
 #battery {
     /*background-color: #ffffff;*/ 
@@ -194,39 +206,11 @@ button:hover {
 
 #power-profiles-daemon {
     padding-right: 15px;
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
+    background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
+    border: 2px solid #8A6FD3; 
     border-radius: 10px;
 }
 
-#power-profiles-daemon.performance {
-    /*background-color: #f53c3c;*/
-    /*background-color: #57467B;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    /*background-color: #2980b9;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    /*background-color: #57467B;*/
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    /*background-color: #2ecc71;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #ffffff;
-}
 
 label:focus {
     background-color: #000000;
@@ -240,7 +224,7 @@ label:focus {
     border-radius: 10px;
     font-weight: 700;
     color: #ffffff;
-    opacity: 0.8;
+
 }
 
 #memory {
@@ -249,7 +233,7 @@ label:focus {
     border: 2px solid #8A6FD3;
     border-radius: 10px;
     font-weight: 700;
-    opacity: 0.8;
+    
 }
 
 #disk {
@@ -266,7 +250,7 @@ label:focus {
     border: 2px solid #8A6FD3;
     border-radius: 10px;
     font-weight: 700;
-    opacity: 0.8;
+    
 }
 
 #network.disconnected {
@@ -281,7 +265,7 @@ label:focus {
     border-radius: 10px;
     font-weight: 700;
     color: #ffffff;
-    opacity: 0.8;
+    
 }
 
 #pulseaudio.muted {
@@ -300,18 +284,6 @@ label:focus {
     background-color: #f53c3c;
 }
 
-#custom-cmus {
-    /*background-color: #57467B;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
-    border-radius: 10px;
-    padding: 0 10px;
-    font-weight: 700;
-    color: #ffffff;
-    opacity: 0.8;
-    min-width: 100px;
-}
 
 #bluetooth {
     /*background-color: #57467B;*/
@@ -321,7 +293,7 @@ label:focus {
     padding: 0 10px;
     font-weight: 700;
     color: #ffffff;
-    opacity: 0.8;
+ 
 }
 
 #custom-media.custom-spotify {
@@ -344,16 +316,25 @@ label:focus {
 
 #tray {
     /*background-color: #2980b9;*/
-    background-color: #57467B;
+    /*background-color: #57467B;*/
+    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
+    border: 2px solid #8A6FD3;
+    border-radius: 10px;
 }
 
+/*
+ 
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
 
+ */
+
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
+    border: 2px solid #8A6FD3;
+    border-radius: 10px;
 }
 
 #idle_inhibitor {
