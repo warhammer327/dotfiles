@@ -168,32 +168,44 @@ button:hover {
     min-width: 100px;
 }
 
+/* Container rule to eliminate gaps between modules */
+#battery + #power-profiles-daemon {
+    margin-left: -2px; /* Compensate for the border width to prevent double borders */
+}
 
-#battery {
-    /*background-color: #ffffff;*/ 
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
+/* Reset existing battery and power-profiles styles first */
+#battery,
+#power-profiles-daemon {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
     font-weight: 700;
     color: #ffffff;
-    /*opacity: 0.8;*/
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
 }
 
+/* Create container style for both modules */
+#battery,
+#power-profiles-daemon {
+    background-color: rgba(87, 70, 123, 0.8);
+}
+
+/* Style the battery module (left side) */
+#battery {
+    padding: 0 5px 0 10px;
+    border: 2px solid #8A6FD3;
+    border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Maintain battery charging/critical states */
 #battery.charging, #battery.plugged {
     color: #ffffff;
-    /*background-color: #57467B;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    /*background-color: #26A65B;*/
+    background-color: rgba(87, 70, 123, 0.8);
 }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
@@ -204,11 +216,13 @@ button:hover {
     animation-direction: alternate;
 }
 
+/* Style the power-profiles module (right side) */
 #power-profiles-daemon {
-    padding-right: 15px;
-    background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3; 
-    border-radius: 10px;
+    padding: 0 10px 0 5px;
+    margin-right: 10px;
+    border: 2px solid #8A6FD3;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 
@@ -216,24 +230,45 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    /*background-color: #2ecc71;*/
-    /*background-color: #57467B;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
-    font-weight: 700;
-    color: #ffffff;
-
+/* Container rule to eliminate gaps between modules */
+#cpu + #memory {
+    margin-left: -2px; /* Compensate for the border width to prevent double borders */
 }
 
+/* Reset existing CPU and memory styles first */
+#cpu,
 #memory {
-    /*background-color: #9b59b6;*/ 
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
     font-weight: 700;
-    
+    color: #ffffff;
+}
+
+/* Create container style for both modules */
+#cpu,
+#memory {
+    background-color: rgba(87, 70, 123, 0.8);
+}
+
+/* Style the CPU module (left side) */
+#cpu {
+    padding: 0 5px 0 10px;
+    border: 2px solid #8A6FD3;
+    border-right: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Style the memory module (right side) */
+#memory {
+    padding: 0 10px 0 5px;
+    margin-right: 10px;
+    border: 2px solid #8A6FD3;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 #disk {
@@ -244,19 +279,48 @@ label:focus {
     background-color: #90b1b1;
 }
 
-#network {
-    /*background-color: #775253;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
+/* Reset existing network and bluetooth styles first */
+#network,
+#bluetooth {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
     font-weight: 700;
-    
+    color: #ffffff;
 }
 
+/* Create container style for both modules */
+#network,
+#bluetooth {
+    background-color: rgba(87, 70, 123, 0.8);
+}
+
+/* Style the network module (left side) */
+#network {
+    padding: 0 5px 0 10px;
+    margin-left: 10px;
+    border: 2px solid #8A6FD3;
+    border-right: 1px solid #8A6FD3;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/* Style the bluetooth module (right side) */
+#bluetooth {
+    padding: 0 10px 0 5px;
+    margin-right: 10px;
+    border: 2px solid #8A6FD3;
+    border-left: 1px solid #8A6FD3;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Handle disconnected state */
 #network.disconnected {
     background-color: #f53c3c;
 }
-
 #pulseaudio {
     /*background-color: #f1c40f;*/
     /*background-color: #57467B;*/
@@ -285,17 +349,6 @@ label:focus {
 }
 
 
-#bluetooth {
-    /*background-color: #57467B;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
-    border-radius: 10px;
-    padding: 0 10px;
-    font-weight: 700;
-    color: #ffffff;
- 
-}
-
 #custom-media.custom-spotify {
     background-color: #66cc99;
 }
@@ -318,6 +371,7 @@ label:focus {
     /*background-color: #2980b9;*/
     /*background-color: #57467B;*/
     background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
+    margin-right: 10px;
     border: 2px solid #8A6FD3;
     border-radius: 10px;
 }
@@ -418,6 +472,7 @@ label:focus {
 
 #custom-notification {
     font-family: "NotoSansMono Nerd Font";
+    margin-right: 10px;
 }
 
 

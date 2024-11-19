@@ -1,6 +1,5 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.lang.go",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
