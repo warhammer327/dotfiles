@@ -15,6 +15,7 @@ vim.cmd([[
     set mouse=a                 " enable mouse click
     set cursorline              " highlight current cursorline
     set ttyfast                 " Speed up scrolling in Vim
+    set foldmethod=indent
 ]])
 
 local colors = {
