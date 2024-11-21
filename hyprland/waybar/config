@@ -121,7 +121,8 @@
             "interval": 1,
             //"timezone": "",
             "tooltip-format": "<tt><small>{calendar}</small></tt>",
-            "format": " {:%H:%M, %a %b %d}",
+            //"format": " {:%H:%M, %a %b %d}",
+            "format": " {:%H:%M, %b %d}",
             //"format-alt": " {:%A, %B %d, %Y}",
             "format-alt": " {:%H:%M:%S, %a %b %d}",
             "calendar": {
@@ -172,14 +173,14 @@
                 "warning": 30,
                 "critical": 15
             },
-            "format": "{capacity}% {icon}",
-            "format-full": "{icon}",
-            "format-charging": "{capacity}%  ",
-            "format-plugged": "{capacity}%  ",
-            "format-alt": "{time} {icon}",
+            "format": "{icon}",
+            "format-full": "",
+            "format-charging": "{capacity}% 󱐥",
+            "format-plugged": "󱐥",
+            "format-alt": "{time} {capacity}%",
             // "format-good": "", // An empty format will hide the module
             // "format-full": "",
-            "format-icons": ["", "", "", "", ""]
+            "format-icons": ["", "", "", "", ""],
         },
         "battery#bat2": {
             "bat": "BAT2"
@@ -198,13 +199,13 @@
         "network": {
             // "interface": "wlp2*", // (Optional) To force the use of this interface
             //"format-wifi": "{essid} ({signalStrength}%)  ",
-            //"format-ethernet": "{ipaddr}/{cidr} 󰖈 ",
-            //"format-ethernet": "{bandwidthDownBytes:>} 󰖈 {bandwidthUpBytes:>}",
+            //"format-ethernet": "{ipaddr}/{cidr}  ",
+            //"format-ethernet": "{bandwidthDownBytes:>}   {bandwidthUpBytes:>}",
             //"format-wifi": "{bandwidthDownBytes:>}  {bandwidthUpBytes:>}",
-            "format-ethernet": " 󰖈 ",
-            "format-wifi": "   {signalStrength}%",
+            "format-ethernet": " ",
+            "format-wifi": "  {signalStrength}%",
             "tooltip-format": "{ifname}: {ipaddr}/{cidr} via {gwaddr} ",
-            "format-linked": "{ifname} (No IP) 󰖈 ",
+            "format-linked": "{ifname} (No IP)  ",
             "format-disconnected": "Disconnected ⚠",
             "format-alt": "{essid} {signalStrength}% {bandwidthDownBytes:>} {bandwidthUpBytes:>}",
             "interval": 5,
@@ -284,7 +285,7 @@
             "on-click": "blueman-manager",
             "on-click-right": "rfkill toggle bluetooth",
             "format-icons": {
-                "enabled": "󰂰",
+                "enabled": "󰂯",
                 "disabled": "󰂲"
             }
         },

@@ -103,6 +103,8 @@ button:hover {
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
+    border-radius: 6px;
+    opacity: 0.9;    
 }
 
 #mode {
@@ -152,6 +154,7 @@ button:hover {
 }
 #clock {
     background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
+    margin-left: 10px;
     font-weight: 700;
     border: 2px solid #8A6FD3;
     border-radius: 10px;
