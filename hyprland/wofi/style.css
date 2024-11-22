@@ -3,6 +3,7 @@ window {
     border: 2px solid #bd93f9;
     border-radius: 10px;
     background-color: #282a36;
+    animation-duration: 0ms;
 }
 
 #input {

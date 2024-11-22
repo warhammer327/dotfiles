@@ -139,7 +139,7 @@ button:hover {
     /*margin: 0 0px; */
     background-color: rgba(87, 70, 123, 0.8);
     border-radius: 10px;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-radius: 10px;
 }
 
@@ -156,7 +156,7 @@ button:hover {
     background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
     margin-left: 10px;
     font-weight: 700;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-radius: 10px;
 }
 
@@ -164,7 +164,7 @@ button:hover {
     /*background-color: #57467B;*/
     background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
     font-weight: 700;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-radius: 10px;
     padding: 0 10px;
     color: #ffffff;
@@ -197,7 +197,7 @@ button:hover {
 /* Style the battery module (left side) */
 #battery {
     padding: 0 5px 0 10px;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-right: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -223,7 +223,7 @@ button:hover {
 #power-profiles-daemon {
     padding: 0 10px 0 5px;
     margin-right: 10px;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -259,7 +259,7 @@ label:focus {
 /* Style the CPU module (left side) */
 #cpu {
     padding: 0 5px 0 10px;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-right: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -269,7 +269,7 @@ label:focus {
 #memory {
     padding: 0 10px 0 5px;
     margin-right: 10px;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -304,7 +304,7 @@ label:focus {
 #network {
     padding: 0 5px 0 10px;
     margin-left: 10px;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-right: 1px solid #8A6FD3;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -314,7 +314,7 @@ label:focus {
 #bluetooth {
     padding: 0 10px 0 5px;
     margin-right: 10px;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-left: 1px solid #8A6FD3;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -328,7 +328,7 @@ label:focus {
     /*background-color: #f1c40f;*/
     /*background-color: #57467B;*/
     background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-radius: 10px;
     font-weight: 700;
     color: #ffffff;
@@ -337,7 +337,7 @@ label:focus {
 
 #pulseaudio.muted {
     background-color: #90b1b1;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-radius: 10px;
     color: #2a5c45;
 }
@@ -375,7 +375,7 @@ label:focus {
     /*background-color: #57467B;*/
     background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
     margin-right: 10px;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-radius: 10px;
 }
 
@@ -390,7 +390,7 @@ label:focus {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
-    border: 2px solid #8A6FD3;
+    border: 1px solid #8A6FD3;
     border-radius: 10px;
 }
 

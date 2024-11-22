@@ -175,7 +175,7 @@
             },
             "format": "{icon}",
             "format-full": "",
-            "format-charging": "{capacity}% 󱐥",
+            "format-charging": "{capacity}% ",
             "format-plugged": "󱐥",
             "format-alt": "{time} {capacity}%",
             // "format-good": "", // An empty format will hide the module
