@@ -267,14 +267,15 @@
             "escape": true
         },
         "custom/cmus": {
-            "format": "♪ {}",
-            "max-length": 20,
+            "format": " {}",
+            "max-length": 18,
             "interval": 5,
             "tooltip": false,
             "exec": "cmus-remote -C \"format_print '%t'\"",
             //"exec": "cmus-remote -C \"format_print '%a - %t'\"",
             "exec-if": "pgrep cmus",
             "on-click": "cmus-remote -u",                        //toggle pause
+            "tooltip": false,
             "escape": true,                                       //handle markup entities,
         },
         "bluetooth": {
