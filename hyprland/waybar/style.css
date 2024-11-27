@@ -103,7 +103,7 @@ button:hover {
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
-    border-radius: 6px;
+    border-radius: 3px;
     opacity: 0.9;    
 }
 
