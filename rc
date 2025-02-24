@@ -1,5 +1,5 @@
 set format_current= %t - %a - [%{duration}]
-
+set format_playlist=  %t%= %d      
 set color_error=red
 set color_info=green
 set color_win_title_bg=black
