@@ -19,7 +19,7 @@
             //"idle_inhibitor",
             "pulseaudio",
         "network",
-        "bluetooth",
+        //"bluetooth",
         "cpu",
         "memory",
         //"temperature",
@@ -174,14 +174,14 @@
                 "critical": 15
             },
             "format": "{icon}",
-            "format-full": "",
-            "format-charging": "{capacity}% ",
-            "format-plugged": "󱐥",
+            "format-full": " ",
+            "format-charging": "{capacity}%  ",
+            "format-plugged": " ",
             "format-alt": "{time} [{capacity}%]",
             "tooltip-format": "{time} [{capacity}%]",
             // "format-good": "", // An empty format will hide the module
             // "format-full": "",
-            "format-icons": ["", "", "", "", ""],
+            "format-icons": [" ", " ", " ", " ", " "],
         },
         "battery#bat2": {
             "bat": "BAT2"
@@ -193,8 +193,8 @@
             "format-icons": {
                 "default": "",
                 "performance": "",
-                "balanced": "",
-                "power-saver": ""
+                "balanced": " ",
+                "power-saver": " "
             }
         },
         "network": {
@@ -235,7 +235,7 @@
             "on-click": "pavucontrol"
         },
         "custom/power": {
-            "format" : "⏻ ",
+            "format" : " ",
             "tooltip": false,
             "menu": "on-click",
             "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
@@ -248,15 +248,15 @@
         },
         "custom/notification": {
             "tooltip": false,
-            "format": "{icon}",
+            "format": "{icon} ",
             "format-icons": {
-                "notification": "<span foreground='red'><sup></sup></span>",
+                "notification": "<span foreground='red'><sup> </sup></span>",
                 "none": "",
-                "dnd-notification": "<span foreground='red'><sup></sup></span>",
+                "dnd-notification": "<span foreground='red'><sup></sup></span>",
                 "dnd-none": "",
-                "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+                "inhibited-notification": "<span foreground='red'><sup></sup></span>",
                 "inhibited-none": "",
-                "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+                "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
                 "dnd-inhibited-none": ""
             },
             "return-type": "json",
@@ -277,6 +277,8 @@
             "on-click": "cmus-remote -u",                        //toggle pause
             "tooltip": false,
             "escape": true,                                       //handle markup entities,
+            "scroll-step": 1,                                     //scroll one character at a time
+            "smooth-scrolling-threshold": 15,                     //smooth scrolling for longer titles
         },
         "bluetooth": {
             "format": "{icon}",
@@ -287,8 +289,8 @@
             "on-click": "blueman-manager",
             "on-click-right": "rfkill toggle bluetooth",
             "format-icons": {
-                "enabled": "󰂯",
-                "disabled": "󰂲"
+                "enabled": "󰂱 ",
+                "disabled": "󰂯 "
             }
         },
 }

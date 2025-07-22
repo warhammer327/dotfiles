@@ -82,7 +82,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 10px;
+    padding: 0 7px;
     background-color: transparent; 
     color: #ffffff;
     font-weight: bold;
@@ -304,10 +304,13 @@ label:focus {
 #network {
     padding: 0 5px 0 10px;
     margin-left: 10px;
+    margin-right: 10px;
     border: 1px solid #8A6FD3;
     border-right: 1px solid #8A6FD3;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 /* Style the bluetooth module (right side) */
@@ -479,3 +482,43 @@ label:focus {
 }
 
 
+/* Container rule to eliminate gaps between modules */
+#custom-notification  + #custom-power {
+    margin-left: -2px; /* Compensate for the border width to prevent double borders */
+}
+
+/* Reset existing CPU and memory styles first */
+#custom-notification,
+#custom-power {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Create container style for both modules */
+#custom-notification,
+#custom-power {
+    background-color: rgba(87, 70, 123, 0.8);
+}
+
+/* Style the CPU module (left side) */
+#custom-notification {
+    padding: 0 5px 0 10px;
+    border: 1px solid #8A6FD3;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+/* Style the memory module (right side) */
+#custom-power{
+    padding: 0 10px 0 5px;
+    margin-right: 0px;
+    border: 1px solid #8A6FD3;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
