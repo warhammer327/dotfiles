@@ -1,117 +1,22 @@
+/* ===== GLOBAL STYLES ===== */
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 
-#window {
-    border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: #33658A;
-    font-weight: bold;
-}
-
+/* ===== MAIN WINDOW ===== */
 window#waybar {
     background-color: rgba(43, 48, 59, 0.1);
-    /* 
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-     */
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    transition: background-color 0.5s;
 }
 
 window#waybar.empty {
     background-color: rgba(43, 48, 59, 0.0);
 }
 
-window#waybar.hidden {
-    /*opacity: 0.7;*/
-}
-
-
-
-/* make window module transparent when no windows present 
-window#waybar.empty #window {
-    background-color:#BC2100;
-    color:#BC2100 ;
-}
-
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
-window#waybar.kitty {
-    background-color: #BC2100 ;
-    color: #BC2100 ;
-}
-
-window#waybar.chromium {
-    background-color: #eeeeee;
-    color: #000000;
-}
-*/
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    /*box-shadow: inset 0 -3px transparent;*/
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    /*box-shadow: inset 0 -3px #ffffff;*/
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
-#workspaces button {
-    padding: 0 7px;
-    background-color: transparent; 
-    color: #ffffff;
-    font-weight: bold;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.active {
-    /*background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;*/
-    background-color: transparent;
-    box-shadow: inset 0 0px #ffffff; 
-    color: #50FA7B;
-    font-size: 24px;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-    border-radius: 3px;
-    opacity: 0.9;    
-}
-
-#mode {
-    background-color: #3B413C;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
+/* ===== COMMON MODULE STYLES ===== */
+/* Base styling for most modules */
 #clock,
 #battery,
 #cpu,
@@ -127,84 +32,122 @@ button:hover {
 #mode,
 #idle_inhibitor,
 #scratchpad,
-#power-profiles-daemon,
 #mpd {
     padding: 0 10px;
     color: #ffffff;
     border-radius: 5px;
 }
 
+/* Purple theme modules */
 #window,
-#workspaces {
-    /*margin: 0 0px; */
+#workspaces,
+#clock,
+#custom-cmus,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#custom-notification,
+#custom-power {
     background-color: rgba(87, 70, 123, 0.8);
-    border-radius: 5px;
     border: 1px solid #8A6FD3;
     border-radius: 5px;
+    font-weight: 700;
+    color: #ffffff;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
+/* ===== BUTTONS ===== */
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+}
+
+/* ===== WORKSPACES ===== */
+#workspaces {
+    margin: 0;
+}
+
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
-#clock {
-    background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
-    margin-left: 10px;
-    font-weight: 700;
-    border: 1px solid #8A6FD3;
+
+#workspaces button {
+    padding: 0 7px;
+    background-color: transparent;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.active {
+    background-color: transparent;
+    color: #50FA7B;
+    font-size: 24px;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+    border-radius: 3px;
+    opacity: 0.9;
+}
+
+/* ===== WINDOW ===== */
+#window {
     border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #33658A;
+    font-weight: bold;
+}
+
+/* ===== INDIVIDUAL MODULES ===== */
+#clock {
+    margin-left: 10px;
+    background-color: rgba(87, 70, 123, 0.7);
 }
 
 #custom-cmus {
-    /*background-color: #57467B;*/
-    background-color: rgba(87, 70, 123, 0.7);  /* Changed to rgba for background only */
-    font-weight: 700;
-    border: 1px solid #8A6FD3;
-    border-radius: 5px;
-    padding: 0 10px;
-    color: #ffffff;
+    background-color: rgba(87, 70, 123, 0.7);
     min-width: 100px;
 }
 
-/* Container rule to eliminate gaps between modules */
-#battery + #power-profiles-daemon {
-    margin-left: -2px; /* Compensate for the border width to prevent double borders */
-}
-
-/* Reset existing battery and power-profiles styles first */
-#battery,
-#power-profiles-daemon {
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-/* Create container style for both modules */
-#battery,
-#power-profiles-daemon {
-    background-color: rgba(87, 70, 123, 0.8);
-}
-
-/* Style the battery module (left side) */
-#battery {
+/* ===== CONNECTED MODULES ===== */
+/* CPU + Memory container */
+#cpu {
     padding: 0 5px 0 10px;
-    border: 1px solid #8A6FD3;
     border-right: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-/* Maintain battery charging/critical states */
-#battery.charging, #battery.plugged {
+#memory {
+    padding: 0 10px 0 5px;
+    margin-right: 10px;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* Battery (standalone for now) */
+#battery {
+    margin-right: 10px;
+}
+
+#battery.charging,
+#battery.plugged {
     color: #ffffff;
     background-color: rgba(87, 70, 123, 0.8);
 }
@@ -212,136 +155,41 @@ button:hover {
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation: blink 0.5s steps(12) infinite alternate;
 }
 
-/* Style the power-profiles module (right side) */
-#power-profiles-daemon {
-    padding: 0 10px 0 5px;
-    margin-right: 10px;
-    border: 1px solid #8A6FD3;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-
-label:focus {
-    background-color: #000000;
-}
-
-/* Container rule to eliminate gaps between modules */
-#cpu + #memory {
-    margin-left: -2px; /* Compensate for the border width to prevent double borders */
-}
-
-/* Reset existing CPU and memory styles first */
-#cpu,
-#memory {
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-/* Create container style for both modules */
-#cpu,
-#memory {
-    background-color: rgba(87, 70, 123, 0.8);
-}
-
-/* Style the CPU module (left side) */
-#cpu {
-    padding: 0 5px 0 10px;
-    border: 1px solid #8A6FD3;
-    border-right: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-}
-
-/* Style the memory module (right side) */
-#memory {
-    padding: 0 10px 0 5px;
-    margin-right: 10px;
-    border: 1px solid #8A6FD3;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-/* Reset existing network and bluetooth styles first */
-#network,
-#bluetooth {
-    padding: 0;
-    margin: 0;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
-    font-weight: 700;
-    color: #ffffff;
-}
-
-/* Create container style for both modules */
-#network,
-#bluetooth {
-    background-color: rgba(87, 70, 123, 0.8);
-}
-
-/* Style the network module (left side) */
+/* Network (standalone) */
 #network {
-    padding: 0 5px 0 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    border: 1px solid #8A6FD3;
-    border-right: 1px solid #8A6FD3;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    margin: 0 10px;
 }
 
-/* Style the bluetooth module (right side) */
-#bluetooth {
-    padding: 0 10px 0 5px;
-    margin-right: 10px;
-    border: 1px solid #8A6FD3;
-    border-left: 0px solid #8A6FD3;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-}
-
-/* Handle disconnected state */
 #network.disconnected {
     background-color: #f53c3c;
 }
-#pulseaudio {
-    /*background-color: #f1c40f;*/
-    /*background-color: #57467B;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
-    border: 1px solid #8A6FD3;
-    border-radius: 5px;
-    font-weight: 700;
-    color: #ffffff;
-    
+
+/* Notification + Power container */
+#custom-notification {
+    padding: 0 5px 0 10px;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-family: "NotoSansMono Nerd Font";
+}
+
+#custom-power {
+    padding: 0 10px 0 5px;
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* ===== AUDIO ===== */
+#pulseaudio:hover {
+    background-color: #a37800;
 }
 
 #pulseaudio.muted {
     background-color: #90b1b1;
-    border: 1px solid #8A6FD3;
-    border-radius: 5px;
     color: #2a5c45;
 }
 
@@ -354,47 +202,36 @@ label:focus {
     background-color: #f53c3c;
 }
 
-
-#custom-media.custom-spotify {
-    background-color: #66cc99;
-}
-
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    /*background-color: #156064;*/
-    background-color: #57467B;
-    font-weight: 700;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
+/* ===== SYSTEM TRAY ===== */
 #tray {
-    /*background-color: #2980b9;*/
-    /*background-color: #57467B;*/
-    background-color: rgba(87, 70, 123, 0.8);  /* Changed to rgba for background only */
     margin-right: 10px;
-    border: 1px solid #8A6FD3;
-    border-radius: 5px;
 }
-
-/*
- 
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
- */
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
-    border: 1px solid #8A6FD3;
-    border-radius: 5px;
+}
+
+/* ===== OTHER MODULES ===== */
+#mode {
+    background-color: #3B413C;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#disk {
+    background-color: #964B00;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#temperature {
+    background-color: #57467B;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
 }
 
 #idle_inhibitor {
@@ -423,6 +260,7 @@ label:focus {
     background-color: #51a37a;
 }
 
+/* ===== KEYBOARD & LANGUAGE ===== */
 #language {
     background: #00b093;
     color: #740864;
@@ -434,7 +272,7 @@ label:focus {
 #keyboard-state {
     background: #97e1ad;
     color: #000000;
-    padding: 0 0px;
+    padding: 0;
     margin: 0 5px;
     min-width: 16px;
 }
@@ -447,14 +285,7 @@ label:focus {
     background: rgba(0, 0, 0, 0.2);
 }
 
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-    background-color: transparent;
-}
-
+/* ===== PRIVACY INDICATORS ===== */
 #privacy {
     padding: 0;
 }
@@ -476,49 +307,33 @@ label:focus {
     background-color: #0069d4;
 }
 
-#custom-notification {
-    font-family: "NotoSansMono Nerd Font";
-    margin-right: 10px;
+/* ===== SCRATCHPAD ===== */
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
 }
 
-
-/* Container rule to eliminate gaps between modules */
-#custom-notification  + #custom-power {
-    margin-left: -2px; /* Compensate for the border width to prevent double borders */
-}
-
-/* Reset existing CPU and memory styles first */
-#custom-notification,
-#custom-power {
-    padding: 0;
-    margin: 0;
+#scratchpad.empty {
     background-color: transparent;
-    border: none;
-    border-radius: 0;
-    font-weight: 700;
-    color: #ffffff;
 }
 
-/* Create container style for both modules */
-#custom-notification,
-#custom-power {
-    background-color: rgba(87, 70, 123, 0.8);
+/* ===== MEDIA PLAYERS ===== */
+#custom-media.custom-spotify {
+    background-color: #66cc99;
 }
 
-/* Style the CPU module (left side) */
-#custom-notification {
-    padding: 0 5px 0 10px;
-    border: 1px solid #8A6FD3;
-    border-right: none;
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
+#custom-media.custom-vlc {
+    background-color: #ffa000;
 }
 
-/* Style the memory module (right side) */
-#custom-power{
-    padding: 0 10px 0 5px;
-    margin-right: 0px;
-    border: 1px solid #8A6FD3;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+/* ===== ANIMATIONS ===== */
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+/* ===== FOCUS STATES ===== */
+label:focus {
+    background-color: #000000;
 }
