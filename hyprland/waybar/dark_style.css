@@ -45,12 +45,12 @@ window#waybar.empty {
 #idle_inhibitor,
 #scratchpad,
 #mpd {
-    padding: 0 10px;
+    padding: 0 3px;
     color: #ffffff;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
-/* ===== PRIMARY MODULES ===== */
+/* ===== PRIMARY MODULES - ALL SEPARATED WITH CONSISTENT SPACING ===== */
 #window,
 #workspaces,
 #clock,
@@ -64,10 +64,11 @@ window#waybar.empty {
 #custom-notification,
 #custom-power {
     background-color: rgba(104, 61, 12, 0.0);
-    border: 2px solid #683D0C;
+    border: 2px solid transparent;
     border-radius: 5px;
     font-weight: 700;
     color: #ffffff;
+    margin: 0 2px; /* Consistent spacing between all modules */
 }
 
 /* ===== BUTTONS ===== */
@@ -82,15 +83,15 @@ button:hover {
 
 /* ===== WORKSPACES ===== */
 #workspaces {
-    margin: 0;
+    margin: 0 2px; /* Consistent with other modules */
 }
 
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+    margin-left: 2px; /* Consistent spacing from edge */
 }
 
 .modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+    margin-right: 2px; /* Consistent spacing from edge */
 }
 
 #workspaces button {
@@ -124,40 +125,39 @@ button:hover {
     padding-right: 10px;
     background-color: rgba(104, 61, 12, 0.0);
     font-weight: bold;
+    margin: 0 2px; /* Consistent spacing */
 }
 
 /* ===== INDIVIDUAL MODULES ===== */
 #clock {
-    margin-left: 10px;
     background-color: rgba(104, 61, 12, 0.0);
     color: #ffffff;
     font-weight: 700;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #custom-cmus {
     background-color: rgba(104, 61, 12, 0.0);
     min-width: 100px;
+    margin: 0 3px; /* Consistent spacing */
 }
 
-/* ===== CONNECTED MODULES ===== */
+/* ===== SEPARATED MODULES - NO MORE CONNECTED STYLES ===== */
 #cpu {
-    padding: 0 5px 0 10px;
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    padding: 0 5px; /* Standard padding like other modules */
+    border-radius: 5px; /* Full border radius */
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #memory {
-    padding: 0 10px 0 5px;
-    margin-right: 10px;
-    border-left: none;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    padding: 0 5px; /* Standard padding like other modules */
+    border-radius: 5px; /* Full border radius */
+    margin: 0 3px; /* Consistent spacing */
 }
 
 /* ===== BATTERY ===== */
 #battery {
-    margin-right: 10px;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #battery.charging,
@@ -173,32 +173,34 @@ button:hover {
 
 /* ===== NETWORK ===== */
 #network {
-    margin: 0 10px;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #network.disconnected {
     background-color: #d63031;
 }
 
-/* ===== NOTIFICATION + POWER CONTAINER ===== */
+/* ===== SEPARATED NOTIFICATION + POWER MODULES ===== */
 #custom-notification {
-    padding: 0 5px 0 10px;
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    padding: 0 5px; /* Standard padding like other modules */
+    border-radius: 5px; /* Full border radius */
+    margin: 0 3px; /* Consistent spacing */
     font-family: "NotoSansMono Nerd Font";
 }
 
 #custom-power {
-    padding: 0 10px 0 5px;
-    border-left: none;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    padding: 0 5px; /* Standard padding like other modules */
+    border-radius: 5px; /* Full border radius */
+    margin: 0 3px; /* Consistent spacing */
     color: #ffffff;
     font-weight: bold;
 }
 
 /* ===== AUDIO ===== */
+#pulseaudio {
+    margin: 0 3px; /* Consistent spacing */
+}
+
 #pulseaudio:hover {
     background-color: #683D0C;
 }
@@ -211,6 +213,7 @@ button:hover {
 #wireplumber {
     background-color: #151A18;
     color: #ffffff;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #wireplumber.muted {
@@ -219,7 +222,7 @@ button:hover {
 
 /* ===== SYSTEM TRAY ===== */
 #tray {
-    margin-right: 10px;
+    margin: 0 2px; /* Consistent spacing */
 }
 
 #tray > .needs-attention {
@@ -231,18 +234,22 @@ button:hover {
 #mode {
     background-color: #060B14;
     box-shadow: inset 0 -3px #683D0C;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #disk {
     background-color: #683D0C;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #backlight {
     background-color: #151A18;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #temperature {
     background-color: #080B13;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #temperature.critical {
@@ -251,6 +258,7 @@ button:hover {
 
 #idle_inhibitor {
     background-color: #060B14;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #idle_inhibitor.activated {
@@ -261,6 +269,7 @@ button:hover {
 #mpd {
     background-color: #151A18;
     color: #ffffff;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #mpd.disconnected {
@@ -280,7 +289,7 @@ button:hover {
     background: #683D0C;
     color: #ffffff;
     padding: 0 5px;
-    margin: 0 5px;
+    margin: 0 3px; /* Consistent spacing */
     min-width: 16px;
 }
 
@@ -288,7 +297,7 @@ button:hover {
     background: #151A18;
     color: #ffffff;
     padding: 0;
-    margin: 0 5px;
+    margin: 0 3px; /* Consistent spacing */
     min-width: 16px;
 }
 
@@ -303,6 +312,7 @@ button:hover {
 /* ===== PRIVACY INDICATORS ===== */
 #privacy {
     padding: 0;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #privacy-item {
@@ -325,6 +335,7 @@ button:hover {
 /* ===== SCRATCHPAD ===== */
 #scratchpad {
     background: rgba(11, 12, 19, 0.8);
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #scratchpad.empty {
@@ -334,10 +345,12 @@ button:hover {
 /* ===== MEDIA PLAYERS ===== */
 #custom-media.custom-spotify {
     background-color: #683D0C;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 #custom-media.custom-vlc {
     background-color: #151A18;
+    margin: 0 3px; /* Consistent spacing */
 }
 
 /* ===== FOCUS STATES ===== */
