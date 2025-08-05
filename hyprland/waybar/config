@@ -283,7 +283,7 @@
     },
     "custom/fan": {
       "format": "{}",
-      "interval": 5,
+      "interval": 30,
       "exec": "~/.config/waybar/scripts/fan_monitor.sh",
       "tooltip": true,
       "tooltip-format": "Fan Status",
