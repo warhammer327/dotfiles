@@ -8,7 +8,8 @@ MUSIC_S3_PATH="s3://s3-general-backup-warhammer327/audio"
 AWS_PROFILE="library_manager"
 LOG_FILE="$HOME/.local/share/calibre-s3-sync.log"
 WAIT_TIME=60 # Wait 1 minute after last change
-LOCK_FILE="/tmp/calibre-sync.lock"
+CALIBRE_TIMER_PID=""
+MUSIC_TIMER_PID=""
 
 # Create log directory
 mkdir -p "$(dirname "$LOG_FILE")"
@@ -20,7 +21,9 @@ log() {
 
 # Sync function for Calibre
 sync_calibre() {
-  if ! mkdir "${LOCK_FILE}_calibre" 2>/dev/null; then
+  local lock_file="/tmp/calibre-sync-calibre.lock"
+
+  if ! mkdir "$lock_file" 2>/dev/null; then
     return
   fi
 
@@ -35,7 +38,7 @@ sync_calibre() {
     --sse AES256 2>&1 | tee -a "$LOG_FILE"
 
   result=${PIPESTATUS[0]}
-  rmdir "${LOCK_FILE}_calibre"
+  rmdir "$lock_file"
 
   if [ $result -eq 0 ]; then
     log "Calibre sync completed successfully"
@@ -46,7 +49,9 @@ sync_calibre() {
 
 # Sync function for Music
 sync_music() {
-  if ! mkdir "${LOCK_FILE}_music" 2>/dev/null; then
+  local lock_file="/tmp/calibre-sync-music.lock"
+
+  if ! mkdir "$lock_file" 2>/dev/null; then
     return
   fi
 
@@ -60,7 +65,7 @@ sync_music() {
     --sse AES256 2>&1 | tee -a "$LOG_FILE"
 
   result=${PIPESTATUS[0]}
-  rmdir "${LOCK_FILE}_music"
+  rmdir "$lock_file"
 
   if [ $result -eq 0 ]; then
     log "Music sync completed successfully"
@@ -72,8 +77,8 @@ sync_music() {
 # Cleanup
 cleanup() {
   log "Shutting down"
-  rmdir "${LOCK_FILE}_calibre" 2>/dev/null
-  rmdir "${LOCK_FILE}_music" 2>/dev/null
+  rmdir "/tmp/calibre-sync-calibre.lock" 2>/dev/null
+  rmdir "/tmp/calibre-sync-music.lock" 2>/dev/null
   pkill -P $$ 2>/dev/null
   exit 0
 }
@@ -96,48 +101,62 @@ if [ ! -d "$MUSIC_DIR" ]; then
 fi
 
 # Clean up any stale locks
-rmdir "${LOCK_FILE}_calibre" 2>/dev/null
-rmdir "${LOCK_FILE}_music" 2>/dev/null
+rmdir "/tmp/calibre-sync-calibre.lock" 2>/dev/null
+rmdir "/tmp/calibre-sync-music.lock" 2>/dev/null
+
+# Create named pipes for communication
+FIFO="/tmp/calibre-sync-fifo-$$"
+mkfifo "$FIFO"
+exec 3<>"$FIFO"
+rm "$FIFO"
 
 # Monitor Calibre directory
-inotifywait -m -r -e create,delete,moved_to,moved_from \
-  --exclude '\.caltrash|metadata\.db' \
-  --format 'CALIBRE:%w%f %e' \
-  "$CALIBRE_DIR" 2>&1 &
+(
+  inotifywait -m -r -e create,delete,moved_to,moved_from \
+    --exclude '\.caltrash|metadata\.db' \
+    --format 'CALIBRE' \
+    "$CALIBRE_DIR" 2>/dev/null
+) >&3 &
 
 # Monitor Music directory
-inotifywait -m -r -e create,delete,moved_to,moved_from \
-  --format 'MUSIC:%w%f %e' \
-  "$MUSIC_DIR" 2>&1 &
+(
+  inotifywait -m -r -e create,delete,moved_to,moved_from \
+    --format 'MUSIC' \
+    "$MUSIC_DIR" 2>/dev/null
+) >&3 &
 
-# Process events from both monitors
-while read -r line; do
-  # Skip setup messages
-  [[ $line == *"Watches established"* ]] && log "Ready" && continue
-  [[ $line == *"Setting up watches"* ]] && continue
+log "Monitors started, ready for changes"
 
-  if [[ $line == CALIBRE:* ]]; then
+# Process events
+while read -r -u 3 event; do
+  if [[ $event == CALIBRE ]]; then
     log "Calibre change detected"
 
-    # Kill any existing calibre timer
-    pkill -f "sleep.*calibre_timer" 2>/dev/null
+    # Kill existing calibre timer if running
+    if [ -n "$CALIBRE_TIMER_PID" ] && kill -0 "$CALIBRE_TIMER_PID" 2>/dev/null; then
+      kill "$CALIBRE_TIMER_PID" 2>/dev/null
+    fi
 
-    # Start new timer for Calibre
+    # Start new timer
     (
       sleep $WAIT_TIME
       sync_calibre
     ) &
+    CALIBRE_TIMER_PID=$!
 
-  elif [[ $line == MUSIC:* ]]; then
+  elif [[ $event == MUSIC ]]; then
     log "Music change detected"
 
-    # Kill any existing music timer
-    pkill -f "sleep.*music_timer" 2>/dev/null
+    # Kill existing music timer if running
+    if [ -n "$MUSIC_TIMER_PID" ] && kill -0 "$MUSIC_TIMER_PID" 2>/dev/null; then
+      kill "$MUSIC_TIMER_PID" 2>/dev/null
+    fi
 
-    # Start new timer for Music
+    # Start new timer
     (
       sleep $WAIT_TIME
       sync_music
     ) &
+    MUSIC_TIMER_PID=$!
   fi
 done
