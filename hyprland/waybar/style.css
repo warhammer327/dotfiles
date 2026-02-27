@@ -33,6 +33,7 @@ window#waybar.empty {
 #battery,
 #cpu,
 #memory,
+#bluetooth,
 #disk,
 #temperature,
 #backlight,
@@ -58,6 +59,7 @@ window#waybar.empty {
 #battery,
 #cpu,
 #memory,
+#bluetooth,
 #network,
 #pulseaudio,
 #tray,
@@ -150,6 +152,12 @@ button:hover {
 }
 
 #memory {
+    padding: 0 5px; /* Standard padding like other modules */
+    border-radius: 5px; /* Full border radius */
+    margin: 0 3px; /* Consistent spacing */
+}
+
+#bluetooth {
     padding: 0 5px; /* Standard padding like other modules */
     border-radius: 5px; /* Full border radius */
     margin: 0 3px; /* Consistent spacing */

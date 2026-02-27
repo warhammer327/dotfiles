@@ -18,9 +18,9 @@
     "modules-right": [
     "custom/fan",
     //"idle_inhibitor",
+    "bluetooth",
     "pulseaudio",
     "network",
-    //"bluetooth",
     "cpu",
     "memory",
     //"temperature",
@@ -148,11 +148,11 @@
       }
     },
     "cpu": {
-      "format": "{usage}% ",
+      "format": " {usage}%",
       "tooltip": false
     },
     "memory": {
-      "format": "{}% "
+      "format": " {}%"
     },
     "temperature": {
       "thermal-zone": 2,
@@ -168,7 +168,6 @@
       "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
-      //"format-full": "{capacity}% {icon}",
       "states": {
         // "good": 95,
         "warning": 30,
@@ -180,8 +179,6 @@
       "format-plugged": " ",
       "format-alt": "{time} [{capacity}%]",
       "tooltip-format": "{time} [{capacity}%]",
-      // "format-good": "", // An empty format will hide the module
-      // "format-full": "",
       "format-icons": [" ", " ", " ", " ", " "],
     },
     "battery#bat2": {
@@ -219,7 +216,7 @@
       //"format-bluetooth": "{volume}% {icon} {format_source}",
       //"format-bluetooth-muted": " {icon} {format_source}",
       "format": "{volume}% {icon}",
-      "format-bluetooth": "{volume}%  ",
+      "format-bluetooth": " {volume}%",
       "format-bluetooth-muted": "   ",
       "format-muted": " {format_source}",
       "format-source": "{volume}% ",
